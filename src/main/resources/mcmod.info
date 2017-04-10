@@ -1,0 +1,16 @@
+[
+{
+  "modid": "enderfuge",
+  "name": "Enderfuge",
+  "description": "Increased output from smelting vanilla armor/weapons.",
+  "version": "1.0.0",
+  "mcversion": "1.11.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["TheMasterGeneral"],
+  "credits": "That one reddit thread that suggested this for vanilla. Sorry can't remember your name.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

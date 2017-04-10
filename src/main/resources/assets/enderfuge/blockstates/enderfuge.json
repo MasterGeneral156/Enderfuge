@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "enderfuge:enderfuge" },
+        "facing=south": { "model": "enderfuge:enderfuge", "y": 180 },
+        "facing=west":  { "model": "enderfuge:enderfuge", "y": 270 },
+        "facing=east":  { "model": "enderfuge:enderfuge", "y": 90 }
+    }
+}

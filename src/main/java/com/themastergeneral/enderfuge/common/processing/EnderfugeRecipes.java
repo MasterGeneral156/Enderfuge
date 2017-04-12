@@ -46,19 +46,19 @@ public class EnderfugeRecipes
         this.addSmeltingRecipe(new ItemStack(Items.GOLDEN_LEGGINGS, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET, 36), 0.7F);
         this.addSmeltingRecipe(new ItemStack(Items.GOLDEN_BOOTS, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET, 22), 0.7F);
         
-        this.addSmeltingRecipe(new ItemStack(Items.IRON_AXE, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.field_191525_da, 18), 0.7F);
-        this.addSmeltingRecipe(new ItemStack(Items.IRON_PICKAXE, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.field_191525_da, 18), 0.7F);
-        this.addSmeltingRecipe(new ItemStack(Items.IRON_SWORD, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.field_191525_da, 13), 0.7F);
-        this.addSmeltingRecipe(new ItemStack(Items.IRON_HOE, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.field_191525_da, 13), 0.7F);
-        this.addSmeltingRecipe(new ItemStack(Items.IRON_SHOVEL, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.field_191525_da, 4), 0.7F);
-        this.addSmeltingRecipe(new ItemStack(Items.IRON_HELMET, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.field_191525_da, 27), 0.7F);
-        this.addSmeltingRecipe(new ItemStack(Items.IRON_CHESTPLATE, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.field_191525_da, 40), 0.7F);
-        this.addSmeltingRecipe(new ItemStack(Items.IRON_LEGGINGS, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.field_191525_da, 36), 0.7F);
-        this.addSmeltingRecipe(new ItemStack(Items.IRON_BOOTS, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.field_191525_da, 22), 0.7F);
-        this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_HELMET, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.field_191525_da, 27), 0.7F);
-        this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_CHESTPLATE, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.field_191525_da, 40), 0.7F);
-        this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_LEGGINGS, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.field_191525_da, 36), 0.7F);
-        this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_BOOTS, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.field_191525_da, 22), 0.7F);
+        this.addSmeltingRecipe(new ItemStack(Items.IRON_AXE, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_INGOT, 2), 0.7F);
+        this.addSmeltingRecipe(new ItemStack(Items.IRON_PICKAXE, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_INGOT, 2), 0.7F);
+        this.addSmeltingRecipe(new ItemStack(Items.IRON_SWORD, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_INGOT, 1), 0.7F);
+        this.addSmeltingRecipe(new ItemStack(Items.IRON_HOE, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_INGOT, 1), 0.7F);
+        this.addSmeltingRecipe(new ItemStack(Items.IRON_SHOVEL, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_INGOT, 1), 0.7F);
+        this.addSmeltingRecipe(new ItemStack(Items.IRON_HELMET, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_INGOT, 3), 0.7F);
+        this.addSmeltingRecipe(new ItemStack(Items.IRON_CHESTPLATE, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_INGOT, 4), 0.7F);
+        this.addSmeltingRecipe(new ItemStack(Items.IRON_LEGGINGS, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_INGOT, 4), 0.7F);
+        this.addSmeltingRecipe(new ItemStack(Items.IRON_BOOTS, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_INGOT, 2), 0.7F);
+        this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_HELMET, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_INGOT, 3), 0.7F);
+        this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_CHESTPLATE, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_INGOT, 4), 0.7F);
+        this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_LEGGINGS, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_INGOT, 4), 0.7F);
+        this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_BOOTS, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_INGOT, 2), 0.7F);
     }
 
     /**
@@ -82,7 +82,7 @@ public class EnderfugeRecipes
      */
     public void addSmeltingRecipe(ItemStack input, ItemStack stack, float experience)
     {
-        if (getSmeltingResult(input) != ItemStack.EMPTY) { net.minecraftforge.fml.common.FMLLog.info("Ignored smelting recipe with conflicting input: " + input + " = " + stack); return; }
+        if (getSmeltingResult(input) != null) { net.minecraftforge.fml.common.FMLLog.info("Ignored smelting recipe with conflicting input: " + input + " = " + stack); return; }
         this.smeltingList.put(input, stack);
         this.experienceList.put(stack, Float.valueOf(experience));
     }
@@ -100,7 +100,7 @@ public class EnderfugeRecipes
             }
         }
 
-        return ItemStack.EMPTY;
+        return null;
     }
 
     /**

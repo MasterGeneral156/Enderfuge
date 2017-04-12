@@ -1,1 +1,6 @@
 tile.enderfuge.name=Enderfuge
+gui.jei.category.enderfuge=Enderfuge
+enderfuge.fuel.enderpearl=Can be used to weakly power an Enderfuge.
+enderfuge.fuel.eyeofender=Can be used to moderately power an Enderfuge.
+enderfuge.fuel.enderpearl=Can be used to strongly power an Enderfuge.
+enderfuge.fuel.enderfuge=Can be used to smelt down armor and weapons for better returns than smelting normally. Fueled with end items.

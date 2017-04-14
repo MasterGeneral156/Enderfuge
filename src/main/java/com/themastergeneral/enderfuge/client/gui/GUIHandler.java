@@ -18,7 +18,6 @@ public class GUIHandler implements IGuiHandler
 	public Container getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		if(ID == ENDERFUGE) 
 		{
-			System.out.println("Opened Container");
 			return new ContainerEnderfuge(player.inventory, (TEEnderfuge) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
@@ -28,7 +27,6 @@ public class GUIHandler implements IGuiHandler
 	public GuiScreen getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		if(ID == ENDERFUGE) 
 		{
-			System.out.println("Opened GUI");
 			return new GUIEnderfuge(player.inventory, (TEEnderfuge) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;

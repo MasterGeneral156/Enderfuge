@@ -1,5 +1,7 @@
 package com.themastergeneral.enderfuge.proxy;
 
+import com.themastergeneral.enderfuge.Enderfuge;
+import com.themastergeneral.enderfuge.client.gui.GUIHandler;
 import com.themastergeneral.enderfuge.client.renders.BlockRenderRegister;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -8,6 +10,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 public class ClientProxy extends CommonProxy 
 {

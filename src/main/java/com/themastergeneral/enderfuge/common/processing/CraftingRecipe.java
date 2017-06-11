@@ -12,10 +12,10 @@ public class CraftingRecipe
 {
 	public static void addRecipes() 
 	{
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.enderfuge), 
+		/*GameRegistry.addRecipe(new ItemStack(ModBlocks.enderfuge), 
 				"PPP", "PCP", "OOO", 
 				'P', Blocks.PURPUR_BLOCK, 
 				'C', Items.END_CRYSTAL, 
-				'O', Blocks.OBSIDIAN);
+				'O', Blocks.OBSIDIAN);*/
 	}
 }

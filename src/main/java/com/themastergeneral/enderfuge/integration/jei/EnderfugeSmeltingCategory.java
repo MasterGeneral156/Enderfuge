@@ -2,6 +2,8 @@ package com.themastergeneral.enderfuge.integration.jei;
 
 import java.util.List;
 
+import com.themastergeneral.enderfuge.Enderfuge;
+
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.gui.IDrawable;
 import mezz.jei.api.gui.IGuiItemStackGroup;
@@ -63,5 +65,11 @@ public class EnderfugeSmeltingCategory extends EnderfugeRecipeCategory<Enderfuge
 		guiItemStacks.init(outputSlot, false, 60, 18);
 
 		guiItemStacks.set(ingredients);
+	}
+
+	@Override
+	public String getModName() 
+	{
+		return Enderfuge.MODNAME;
 	}
 }

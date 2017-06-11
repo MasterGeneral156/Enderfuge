@@ -4,7 +4,7 @@
   "name": "Enderfuge",
   "description": "Increased output from smelting vanilla armor/weapons.",
   "version": "1.1.2",
-  "mcversion": "1.11.2",
+  "mcversion": "1.12",
   "url": "https://minecraft.curseforge.com/projects/enderfuge",
   "updateUrl": "https://raw.githubusercontent.com/MasterGeneral156/Version/master/Enderfuge.json",
   "authorList": ["TheMasterGeneral"],

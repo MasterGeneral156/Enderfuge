@@ -79,19 +79,29 @@ public class BlockEnderfuge extends BlockContainer implements ITileEntityProvide
 	@Override
 	public void breakBlock(World world, BlockPos pos, IBlockState blockstate) 
 	{
-		TEEnderfuge te = (TEEnderfuge) world.getTileEntity(pos);
-	    InventoryHelper.dropInventoryItems(world, pos, te);
-	    super.breakBlock(world, pos, blockstate);
+		if (!keepInventory)
+        {
+            TileEntity tileentity = world.getTileEntity(pos);
+
+            if (tileentity instanceof TEEnderfuge)
+            {
+                InventoryHelper.dropInventoryItems(world, pos, (TEEnderfuge)tileentity);
+                world.updateComparatorOutputLevel(pos, this);
+            }
+        }
 	}
 
 	@Override
-	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-	    if (stack.hasDisplayName()) {
+	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
+	{
+	    if (stack.hasDisplayName()) 
+	    {
 	        ((TEEnderfuge) worldIn.getTileEntity(pos)).setCustomInventoryName(stack.getDisplayName());
 	    }
 	}
 	
-	public int getRenderType() {
+	public int getRenderType() 
+	{
 		return 3;
 	}
 	public void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state)
@@ -124,14 +134,53 @@ public class BlockEnderfuge extends BlockContainer implements ITileEntityProvide
             worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
         }
     }
+	@Override
+    @SuppressWarnings("incomplete-switch")
+	@SideOnly(Side.CLIENT)
+    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+    {
+		if (this.isBurning)
+        {
+            EnumFacing enumfacing = (EnumFacing)stateIn.getValue(FACING);
+            double d0 = (double)pos.getX() + 0.5D;
+            double d1 = (double)pos.getY() + rand.nextDouble() * 6.0D / 16.0D;
+            double d2 = (double)pos.getZ() + 0.5D;
+            double d3 = 0.52D;
+            double d4 = rand.nextDouble() * 0.6D - 0.3D;
+
+            if (rand.nextDouble() < 0.1D)
+            {
+                worldIn.playSound((double)pos.getX() + 0.5D, (double)pos.getY(), (double)pos.getZ() + 0.5D, SoundEvents.BLOCK_PORTAL_AMBIENT, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+            }
+
+            switch (enumfacing)
+            {
+                case WEST:
+                    worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0 - 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0 - 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    break;
+                case EAST:
+                    worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0 + 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0 + 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    break;
+                case NORTH:
+                    worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0 + d4, d1, d2 - 0.52D, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0 + d4, d1, d2 - 0.52D, 0.0D, 0.0D, 0.0D);
+                    break;
+                case SOUTH:
+                    worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0 + d4, d1, d2 + 0.52D, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0 + d4, d1, d2 + 0.52D, 0.0D, 0.0D, 0.0D);
+            }
+        }
+    }
 	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
         return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
 	 public EnumBlockRenderType getRenderType(IBlockState state)
-	   {
+	 {
 	        return EnumBlockRenderType.MODEL;
-	    }
+	 }
 	    public IBlockState getStateFromMeta(int meta)
 	    {
 	        EnumFacing enumfacing = EnumFacing.getFront(meta);
@@ -170,8 +219,8 @@ public class BlockEnderfuge extends BlockContainer implements ITileEntityProvide
 
 	        if (active)
 	        {
-	            worldIn.setBlockState(pos, ModBlocks.enderfuge.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-	            worldIn.setBlockState(pos, ModBlocks.enderfuge.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+	            worldIn.setBlockState(pos, ModBlocks.enderfuge_active.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+	            worldIn.setBlockState(pos, ModBlocks.enderfuge_active.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
 	        }
 	        else
 	        {
@@ -186,5 +235,15 @@ public class BlockEnderfuge extends BlockContainer implements ITileEntityProvide
 	            tileentity.validate();
 	            worldIn.setTileEntity(pos, tileentity);
 	        }
+	    }
+	    @Override
+	    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+	    {
+	        return Item.getItemFromBlock(ModBlocks.enderfuge);
+	    }
+	    @Override
+	    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
+	    {
+	        return new ItemStack(ModBlocks.enderfuge);
 	    }
 }

@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "enderfuge:blocks/enderfuge_top",
+        "front": "enderfuge:blocks/enderfuge_front",
+        "side": "enderfuge:blocks/enderfuge_side",
+		"bottom": "enderfuge:blocks/enderfuge_bottom"
+    }
+}

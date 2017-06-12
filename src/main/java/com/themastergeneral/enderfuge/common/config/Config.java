@@ -10,10 +10,10 @@ import net.minecraftforge.common.config.Configuration;
 public class Config {
 
     private static final String CATEGORY_GENERAL = "General";
-    public static int smeltTime = 1000;
-    public static int pearlFuelTime = 250;
-    public static int eyeFuelTime = 500;
-    public static int crystalFuelTime = 1000;
+    public static int smeltTime = 400;
+    public static int pearlFuelTime = 1600;
+    public static int eyeFuelTime = 5600;
+    public static int crystalFuelTime = 25000;
 
     public static void readConfig() 
     {

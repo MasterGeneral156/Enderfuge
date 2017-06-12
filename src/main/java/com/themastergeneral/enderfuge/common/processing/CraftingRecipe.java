@@ -1,5 +1,7 @@
 package com.themastergeneral.enderfuge.common.processing;
 
+import com.themastergeneral.ctdcore.utils.ModUtils;
+import com.themastergeneral.enderfuge.Enderfuge;
 import com.themastergeneral.enderfuge.common.blocks.ModBlocks;
 
 import net.minecraft.init.Blocks;
@@ -12,10 +14,11 @@ public class CraftingRecipe
 {
 	public static void addRecipes() 
 	{
-		/*GameRegistry.addRecipe(new ItemStack(ModBlocks.enderfuge), 
-				"PPP", "PCP", "OOO", 
-				'P', Blocks.PURPUR_BLOCK, 
-				'C', Items.END_CRYSTAL, 
-				'O', Blocks.OBSIDIAN);*/
+		ModUtils.addShapedRecipe(Enderfuge.MODID, "enderfuge", 
+				new ItemStack(ModBlocks.enderfuge), 
+				new Object[]{"PPP","PCP","OOO",
+    			'P', Blocks.PURPUR_BLOCK, 
+    			'C', Items.END_CRYSTAL,
+    			'O', Blocks.OBSIDIAN});
 	}
 }

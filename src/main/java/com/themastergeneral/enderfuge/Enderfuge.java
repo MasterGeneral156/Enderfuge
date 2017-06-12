@@ -12,13 +12,16 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Enderfuge.MODID, name = Enderfuge.MODNAME, version = Enderfuge.VERSION, acceptedMinecraftVersions = Enderfuge.acceptedMinecraftVersions, updateJSON = Enderfuge.updateJSON)
+@Mod(modid = Enderfuge.MODID, name = Enderfuge.MODNAME, version = Enderfuge.VERSION,
+		acceptedMinecraftVersions = Enderfuge.acceptedMinecraftVersions, 
+		updateJSON = Enderfuge.updateJSON, dependencies = Enderfuge.DEPENDENCIES)
 public class Enderfuge 
 {
 	public static final String MODID = "enderfuge";
     public static final String MODNAME = "Enderfuge";
-    public static final String VERSION = "1.1.2";
+    public static final String VERSION = "1.1.3";
     public static final String acceptedMinecraftVersions = "1.12";
+    public static final String DEPENDENCIES = "required-after:ctdcore@[1.1.0,];";
 	public static final String updateJSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/Enderfuge.json";
     
     @Instance

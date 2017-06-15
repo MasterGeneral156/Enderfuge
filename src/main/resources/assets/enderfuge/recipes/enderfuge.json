@@ -1,0 +1,24 @@
+{
+    "conditions": [
+        {
+            "type": "mod_loaded",
+            "mod": "minecraft"
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "group": "enderfuge",
+    "pattern": [
+        "PPP",
+        "PEP",
+        "OOO"
+    ],
+    "key": {
+        "P": { "item": "minecraft:purpur_block" },
+        "E": { "item": "minecraft:end_crystal" },
+        "O": { "item": "minecraft:obsidian" }
+    },
+    "result": {
+        "item": "enderfuge:enderfuge",
+        "data": 0
+    }
+}

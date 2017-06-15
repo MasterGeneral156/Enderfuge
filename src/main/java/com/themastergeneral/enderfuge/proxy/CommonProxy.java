@@ -6,7 +6,6 @@ import com.themastergeneral.enderfuge.Enderfuge;
 import com.themastergeneral.enderfuge.client.gui.GUIHandler;
 import com.themastergeneral.enderfuge.common.blocks.ModBlocks;
 import com.themastergeneral.enderfuge.common.config.Config;
-import com.themastergeneral.enderfuge.common.processing.CraftingRecipe;
 import com.themastergeneral.enderfuge.common.tileentity.TEEnderfuge;
 
 import net.minecraft.item.Item;
@@ -28,7 +27,6 @@ public class CommonProxy
         config = new Configuration(new File(directory.getPath(), "ctd/enderfuge.cfg"));
         Config.readConfig();
         ModBlocks.registerBlocks();
-        CraftingRecipe.addRecipes();
 	}
 
 	public void init(FMLInitializationEvent e) 

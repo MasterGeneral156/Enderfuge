@@ -19,7 +19,7 @@ public class Enderfuge
 {
 	public static final String MODID = "enderfuge";
     public static final String MODNAME = "Enderfuge";
-    public static final String VERSION = "1.1.5";
+    public static final String VERSION = "1.1.6";
     public static final String acceptedMinecraftVersions = "1.12";
     public static final String DEPENDENCIES = "required-after:ctdcore@[1.1.2,];";
 	public static final String updateJSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/Enderfuge.json";

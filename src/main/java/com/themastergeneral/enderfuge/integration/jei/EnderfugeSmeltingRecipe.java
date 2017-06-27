@@ -41,7 +41,7 @@ public class EnderfugeSmeltingRecipe extends BlankRecipeWrapper  {
 		float experience = furnaceRecipes.getSmeltingExperience(output);
 		if (experience > 0) {
 			String experienceString = "XP 0.7";
-			FontRenderer fontRendererObj = minecraft.fontRendererObj;
+			FontRenderer fontRendererObj = minecraft.fontRenderer;
 			int stringWidth = fontRendererObj.getStringWidth(experienceString);
 			fontRendererObj.drawString(experienceString, recipeWidth - stringWidth, 0, Color.gray.getRGB());
 		}

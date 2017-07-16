@@ -1,5 +1,6 @@
 package com.themastergeneral.enderfuge.client.gui;
 
+import com.themastergeneral.enderfuge.common.tileentity.TEEnderfuge;
 import com.themastergeneral.enderfuge.server.container.ContainerEnderfuge;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -9,6 +10,7 @@ import net.minecraft.inventory.ContainerFurnace;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
 
 public class GUIEnderfuge extends GuiContainer 
 {
@@ -23,21 +25,23 @@ public class GUIEnderfuge extends GuiContainer
         this.playerInventory = playerInv;
         this.tileFurnace = furnaceInv;
     }
-
     /**
      * Draw the foreground layer for the GuiContainer (everything in front of the items)
      */
-    protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY)
+    @Override
+    public void drawGuiContainerForegroundLayer(int mouseX, int mouseY)
     {
-    	/*String s = this.tileFurnace.getDisplayName().getUnformattedText();
-        this.fontRendererObj.drawString(s, this.xSize / 2 - this.fontRendererObj.getStringWidth(s) / 2, 6, 4210752);
-        this.fontRendererObj.drawString(this.playerInventory.getDisplayName().getUnformattedText(), 8, this.ySize - 96 + 2, 4210752);*/
+    	//I seriously have no idea why it crashes, or shows a shadow under the text.
+    	//String s = "container.enderfuge".;
+    	//drawString(fontRenderer, s, this.xSize / 2 - this.fontRenderer.getStringWidth(s) / 2, 6, 4210752);
+        //drawString(fontRenderer, this.playerInventory.getDisplayName().getUnformattedText(), 8, this.ySize - 96 + 2, 4210752);
     }
 
     /**
      * Draws the background layer of this container (behind the items).
      */
-    protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
+    @Override
+    public void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
     {
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.getTextureManager().bindTexture(FURNACE_GUI_TEXTURES);
@@ -45,7 +49,7 @@ public class GUIEnderfuge extends GuiContainer
         int j = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(i, j, 0, 0, this.xSize, this.ySize);
 
-        if (TileEntityFurnace.isBurning(this.tileFurnace))
+        if (TEEnderfuge.isBurning(this.tileFurnace))
         {
             int k = this.getBurnLeftScaled(13);
             this.drawTexturedModalRect(i + 56, j + 36 + 12 - k, 176, 12 - k, 14, k + 1);
@@ -72,5 +76,11 @@ public class GUIEnderfuge extends GuiContainer
         }
 
         return this.tileFurnace.getField(0) * pixels / i;
+    }
+    public void drawScreen(int mouseX, int mouseY, float partialTicks)
+    {
+        this.drawDefaultBackground();
+        super.drawScreen(mouseX, mouseY, partialTicks);
+        this.renderHoveredToolTip(mouseX, mouseY);
     }
 }

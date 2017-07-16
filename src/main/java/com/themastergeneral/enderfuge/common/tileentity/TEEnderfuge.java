@@ -122,7 +122,7 @@ public class TEEnderfuge extends TileEntity implements ITickable, ISidedInventor
     }
     public String getName()
     {
-        return this.hasCustomName() ? this.furnaceCustomName : "container.furnace";
+        return this.hasCustomName() ? this.furnaceCustomName : "container.enderfuge";
     }
     public boolean hasCustomName()
     {

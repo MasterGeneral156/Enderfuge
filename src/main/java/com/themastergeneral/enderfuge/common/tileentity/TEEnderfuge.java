@@ -387,7 +387,14 @@ public class TEEnderfuge extends TileEntity implements ITickable, ISidedInventor
 
     public int[] getSlotsForFace(EnumFacing side)
     {
-        return side == EnumFacing.DOWN ? SLOTS_BOTTOM : (side == EnumFacing.UP ? SLOTS_TOP : SLOTS_SIDES);
+    	if (side == EnumFacing.DOWN)
+        {
+            return SLOTS_BOTTOM;
+        }
+        else
+        {
+            return side == EnumFacing.UP ? SLOTS_TOP : SLOTS_SIDES;
+        }
     }
 
     /**
@@ -403,10 +410,16 @@ public class TEEnderfuge extends TileEntity implements ITickable, ISidedInventor
      */
     public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction)
     {
-        if (direction == EnumFacing.DOWN && index == 1)
+    	if (direction == EnumFacing.DOWN && index == 1)
         {
             Item item = stack.getItem();
+
+            if (item != Items.WATER_BUCKET && item != Items.BUCKET)
+            {
+                return false;
+            }
         }
+
         return true;
     }
 

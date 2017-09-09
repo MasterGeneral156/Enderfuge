@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "1.12-1.1.8.1"
+version = "${mc_version}-${mod_version}"
 group = "com.themastergeneral.enderfuge" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "Enderfuge"
 
@@ -22,7 +22,7 @@ compileJava {
 
 minecraft 
 {
-    version = "1.12-14.21.0.2373"
+    version = "1.12.1-14.22.0.2463"
     runDir = "run"
     mappings = "snapshot_20170624"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.

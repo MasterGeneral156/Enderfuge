@@ -3,7 +3,8 @@ package com.themastergeneral.enderfuge.integration.jei;
 import mezz.jei.api.recipe.IRecipeHandler;
 import mezz.jei.api.recipe.IRecipeWrapper;
 
-public class EnderfugeSmeltingHandler implements IRecipeHandler<EnderfugeSmeltingRecipe> {
+public class EnderfugeSmeltingHandler implements
+		IRecipeHandler<EnderfugeSmeltingRecipe> {
 
 	@Override
 	public Class<EnderfugeSmeltingRecipe> getRecipeClass() {
@@ -25,8 +26,7 @@ public class EnderfugeSmeltingHandler implements IRecipeHandler<EnderfugeSmeltin
 	}
 
 	@Override
-	public boolean isRecipeValid(EnderfugeSmeltingRecipe recipe) 
-	{
+	public boolean isRecipeValid(EnderfugeSmeltingRecipe recipe) {
 		return true;
 	}
 

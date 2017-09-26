@@ -2,8 +2,6 @@ package com.themastergeneral.enderfuge.integration.jei;
 
 import java.util.List;
 
-import com.themastergeneral.enderfuge.Enderfuge;
-
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.gui.IDrawable;
 import mezz.jei.api.gui.IGuiItemStackGroup;
@@ -13,13 +11,17 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-public class EnderfugeSmeltingCategory extends EnderfugeRecipeCategory<EnderfugeSmeltingRecipe> {
+import com.themastergeneral.enderfuge.Enderfuge;
+
+public class EnderfugeSmeltingCategory extends
+		EnderfugeRecipeCategory<EnderfugeSmeltingRecipe> {
 	private final IDrawable background;
 	private final String localizedName;
 
 	public EnderfugeSmeltingCategory(IGuiHelper guiHelper) {
 		super(guiHelper);
-		ResourceLocation location = new ResourceLocation("minecraft", "textures/gui/container/furnace.png");
+		ResourceLocation location = new ResourceLocation("minecraft",
+				"textures/gui/container/furnace.png");
 		background = guiHelper.createDrawable(location, 55, 16, 82, 54);
 		localizedName = "Enderfuge";
 	}
@@ -45,7 +47,8 @@ public class EnderfugeSmeltingCategory extends EnderfugeRecipeCategory<Enderfuge
 		return "enderfuge:enderfuge";
 	}
 
-	public void setRecipe(IRecipeLayout recipeLayout, EnderfugeSmeltingRecipe recipeWrapper) {
+	public void setRecipe(IRecipeLayout recipeLayout,
+			EnderfugeSmeltingRecipe recipeWrapper) {
 		IGuiItemStackGroup guiItemStacks = recipeLayout.getItemStacks();
 
 		guiItemStacks.init(inputSlot, true, 0, 0);
@@ -58,7 +61,8 @@ public class EnderfugeSmeltingCategory extends EnderfugeRecipeCategory<Enderfuge
 	}
 
 	@Override
-	public void setRecipe(IRecipeLayout recipeLayout, EnderfugeSmeltingRecipe recipeWrapper, IIngredients ingredients) {
+	public void setRecipe(IRecipeLayout recipeLayout,
+			EnderfugeSmeltingRecipe recipeWrapper, IIngredients ingredients) {
 		IGuiItemStackGroup guiItemStacks = recipeLayout.getItemStacks();
 
 		guiItemStacks.init(inputSlot, true, 0, 0);
@@ -68,8 +72,7 @@ public class EnderfugeSmeltingCategory extends EnderfugeRecipeCategory<Enderfuge
 	}
 
 	@Override
-	public String getModName() 
-	{
+	public String getModName() {
 		return Enderfuge.MODNAME;
 	}
 }

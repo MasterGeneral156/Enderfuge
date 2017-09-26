@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 
 import com.themastergeneral.enderfuge.common.processing.EnderfugeRecipes;
 
-public class EnderfugeSmeltingRecipe extends BlankRecipeWrapper  {
+public class EnderfugeSmeltingRecipe extends BlankRecipeWrapper {
 	private final List<List<ItemStack>> inputs;
 	private final ItemStack output;
 
@@ -36,14 +36,16 @@ public class EnderfugeSmeltingRecipe extends BlankRecipeWrapper  {
 	}
 
 	@Override
-	public void drawInfo(Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
+	public void drawInfo(Minecraft minecraft, int recipeWidth,
+			int recipeHeight, int mouseX, int mouseY) {
 		EnderfugeRecipes furnaceRecipes = EnderfugeRecipes.instance();
 		float experience = furnaceRecipes.getSmeltingExperience(output);
 		if (experience > 0) {
 			String experienceString = "XP 0.7";
 			FontRenderer fontRendererObj = minecraft.fontRenderer;
 			int stringWidth = fontRendererObj.getStringWidth(experienceString);
-			fontRendererObj.drawString(experienceString, recipeWidth - stringWidth, 0, Color.gray.getRGB());
+			fontRendererObj.drawString(experienceString, recipeWidth
+					- stringWidth, 0, Color.gray.getRGB());
 		}
 	}
 }

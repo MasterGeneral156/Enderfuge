@@ -16,37 +16,36 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class CommonProxy 
-{
+public class CommonProxy {
 	// Config instance
-    public static Configuration config;
+	public static Configuration config;
 
-	public void preInit(FMLPreInitializationEvent e) 
-	{
+	public void preInit(FMLPreInitializationEvent e) {
 		File directory = e.getModConfigurationDirectory();
-        config = new Configuration(new File(directory.getPath(), "ctd/enderfuge.cfg"));
-        Config.readConfig();
-        ModBlocks.registerBlocks();
+		config = new Configuration(new File(directory.getPath(),
+				"ctd/enderfuge.cfg"));
+		Config.readConfig();
+		ModBlocks.registerBlocks();
 	}
 
-	public void init(FMLInitializationEvent e) 
-	{
-		NetworkRegistry.INSTANCE.registerGuiHandler(Enderfuge.instance, new GUIHandler());
+	public void init(FMLInitializationEvent e) {
+		NetworkRegistry.INSTANCE.registerGuiHandler(Enderfuge.instance,
+				new GUIHandler());
 	}
-	public void registerTileEntities() 
-	{
-		GameRegistry.registerTileEntity(TEEnderfuge.class, Enderfuge.MODID+"_enderfuge");
+
+	public void registerTileEntities() {
+		GameRegistry.registerTileEntity(TEEnderfuge.class, Enderfuge.MODID
+				+ "_enderfuge");
 	}
-	public void postInit(FMLPostInitializationEvent e) 
-	{
-		if (config.hasChanged()) 
-		{
-            config.save();
-        }
+
+	public void postInit(FMLPostInitializationEvent e) {
+		if (config.hasChanged()) {
+			config.save();
+		}
 	}
 
 	public void registerItemRenderer(Item itemBlock, int i, String name) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

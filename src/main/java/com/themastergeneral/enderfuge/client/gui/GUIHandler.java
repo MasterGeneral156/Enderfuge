@@ -1,8 +1,5 @@
 package com.themastergeneral.enderfuge.client.gui;
 
-import com.themastergeneral.enderfuge.common.tileentity.TEEnderfuge;
-import com.themastergeneral.enderfuge.server.container.ContainerEnderfuge;
-
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
@@ -12,25 +9,29 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class GUIHandler implements IGuiHandler 
-{
+import com.themastergeneral.enderfuge.common.tileentity.TEEnderfuge;
+import com.themastergeneral.enderfuge.server.container.ContainerEnderfuge;
+
+public class GUIHandler implements IGuiHandler {
 	public static final int ENDERFUGE = 0;
 
 	@Override
-	public Container getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		if(ID == ENDERFUGE) 
-		{
-			return new ContainerEnderfuge(player.inventory, (TEEnderfuge) world.getTileEntity(new BlockPos(x, y, z)));
+	public Container getServerGuiElement(int ID, EntityPlayer player,
+			World world, int x, int y, int z) {
+		if (ID == ENDERFUGE) {
+			return new ContainerEnderfuge(player.inventory,
+					(TEEnderfuge) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public GuiScreen getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		if(ID == ENDERFUGE) 
-		{
-			return new GUIEnderfuge(player.inventory, (TEEnderfuge) world.getTileEntity(new BlockPos(x, y, z)));
+	public GuiScreen getClientGuiElement(int ID, EntityPlayer player,
+			World world, int x, int y, int z) {
+		if (ID == ENDERFUGE) {
+			return new GUIEnderfuge(player.inventory,
+					(TEEnderfuge) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}

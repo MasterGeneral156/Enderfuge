@@ -7,7 +7,8 @@ import mezz.jei.api.recipe.BlankRecipeCategory;
 import mezz.jei.api.recipe.IRecipeWrapper;
 import net.minecraft.util.ResourceLocation;
 
-public abstract class EnderfugeRecipeCategory<T extends IRecipeWrapper> extends BlankRecipeCategory<T> {
+public abstract class EnderfugeRecipeCategory<T extends IRecipeWrapper> extends
+		BlankRecipeCategory<T> {
 	protected static final int inputSlot = 0;
 	protected static final int fuelSlot = 1;
 	protected static final int outputSlot = 2;
@@ -17,12 +18,17 @@ public abstract class EnderfugeRecipeCategory<T extends IRecipeWrapper> extends 
 	protected final IDrawableAnimated arrow;
 
 	public EnderfugeRecipeCategory(IGuiHelper guiHelper) {
-		backgroundLocation = new ResourceLocation("minecraft", "textures/gui/container/furnace.png");
+		backgroundLocation = new ResourceLocation("minecraft",
+				"textures/gui/container/furnace.png");
 
-		IDrawableStatic flameDrawable = guiHelper.createDrawable(backgroundLocation, 176, 0, 14, 14);
-		flame = guiHelper.createAnimatedDrawable(flameDrawable, 300, IDrawableAnimated.StartDirection.TOP, true);
+		IDrawableStatic flameDrawable = guiHelper.createDrawable(
+				backgroundLocation, 176, 0, 14, 14);
+		flame = guiHelper.createAnimatedDrawable(flameDrawable, 300,
+				IDrawableAnimated.StartDirection.TOP, true);
 
-		IDrawableStatic arrowDrawable = guiHelper.createDrawable(backgroundLocation, 176, 14, 24, 17);
-		this.arrow = guiHelper.createAnimatedDrawable(arrowDrawable, 200, IDrawableAnimated.StartDirection.LEFT, false);
+		IDrawableStatic arrowDrawable = guiHelper.createDrawable(
+				backgroundLocation, 176, 14, 24, 17);
+		this.arrow = guiHelper.createAnimatedDrawable(arrowDrawable, 200,
+				IDrawableAnimated.StartDirection.LEFT, false);
 	}
 }

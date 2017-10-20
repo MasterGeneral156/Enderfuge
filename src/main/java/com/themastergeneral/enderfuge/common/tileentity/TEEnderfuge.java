@@ -18,11 +18,13 @@ import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.util.datafix.FixTypes;
 import net.minecraft.util.datafix.walkers.ItemStackDataLists;
 import net.minecraft.util.math.MathHelper;
+import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.themastergeneral.enderfuge.common.blocks.BlockEnderfuge;
 import com.themastergeneral.enderfuge.common.config.Config;
+import com.themastergeneral.enderfuge.common.processing.EnderfugeFuel;
 import com.themastergeneral.enderfuge.common.processing.EnderfugeRecipes;
 import com.themastergeneral.enderfuge.common.slots.SlotEnderfugeFuel;
 import com.themastergeneral.enderfuge.server.container.ContainerEnderfuge;
@@ -255,14 +257,7 @@ public class TEEnderfuge extends TileEntity implements ITickable,
 					return false;
 				int result = itemstack1.getCount() + itemstack.getCount();
 				return result <= getInventoryStackLimit()
-						&& result <= itemstack1.getMaxStackSize(); // Forge fix:
-																	// make
-																	// furnace
-																	// respect
-																	// stack
-																	// sizes in
-																	// furnace
-																	// recipes
+						&& result <= itemstack1.getMaxStackSize();
 			}
 		}
 	}
@@ -295,22 +290,7 @@ public class TEEnderfuge extends TileEntity implements ITickable,
 		if (stack.isEmpty()) {
 			return 0;
 		} else {
-			Item item = stack.getItem();
-			if (!item.getRegistryName().getResourceDomain().equals("minecraft")) {
-				int burnTime = net.minecraftforge.fml.common.registry.GameRegistry
-						.getFuelValue(stack);
-				if (burnTime != 0)
-					return burnTime;
-			}
-			if (item == Items.ENDER_EYE) {
-				return Config.eyeFuelTime;
-			} else if (item == Items.ENDER_PEARL) {
-				return Config.pearlFuelTime;
-			} else if (item == Items.END_CRYSTAL) {
-				return Config.crystalFuelTime;
-			} else {
-				return 0;
-			}
+			return EnderfugeFuel.instance().getFuelResult(stack);
 		}
 	}
 

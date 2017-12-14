@@ -7,18 +7,22 @@ import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLInterModComms;
+import net.minecraftforge.fml.common.event.FMLInterModComms.IMCEvent;
+import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import org.apache.logging.log4j.Logger;
 
 import com.themastergeneral.enderfuge.proxy.CommonProxy;
+import com.themastergeneral.enderfuge.utils.IMCHandler;
 
 @Mod(modid = Enderfuge.MODID, name = Enderfuge.MODNAME, certificateFingerprint = Enderfuge.Fingerprint, version = Enderfuge.VERSION, acceptedMinecraftVersions = Enderfuge.acceptedMinecraftVersions, updateJSON = Enderfuge.updateJSON, dependencies = Enderfuge.DEPENDENCIES)
 public class Enderfuge {
 	public static final String MODID = "enderfuge";
 	public static final String MODNAME = "Enderfuge";
-	public static final String VERSION = "1.3.0";
+	public static final String VERSION = "1.4.0";
 	public static final String acceptedMinecraftVersions = "1.12.2";
 	public static final String DEPENDENCIES = "required-after:ctdcore@[1.2,];";
 	public static final String updateJSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/Enderfuge.json";
@@ -49,11 +53,23 @@ public class Enderfuge {
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent e) {
 		proxy.postInit(e);
-		logger.info("Enderfuge has loaded successfully.");
 	}
-	
+
 	@EventHandler
 	public void onFingerprintViolation(FMLFingerprintViolationEvent e) {
 		FMLLog.warning("Invalid fingerprint detected for Enderfuge! TheMasterGeneral will not support this version!");
 	}
+
+	@EventHandler
+	public void loadComplete(FMLLoadCompleteEvent e) {
+		IMCHandler.INSTANCE.handleIMC(FMLInterModComms
+				.fetchRuntimeMessages(this));
+		logger.info("Enderfuge has loaded completely.");
+	}
+
+	@EventHandler
+	public void handleIMC(IMCEvent e) {
+		IMCHandler.INSTANCE.handleIMC(e.getMessages());
+	}
+
 }

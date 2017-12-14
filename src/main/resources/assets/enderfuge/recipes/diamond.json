@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "diamond",
+    "pattern": [
+        "NNN",
+        "NNN",
+        "NNN"
+    ],
+    "key": {
+        "N": { "item": "enderfuge:nuggetdiamond" }
+    },
+    "result": {
+        "item": "minecraft:diamond",
+        "data": 0
+    }
+}

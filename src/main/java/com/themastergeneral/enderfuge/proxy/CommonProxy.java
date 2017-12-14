@@ -6,6 +6,7 @@ import com.themastergeneral.enderfuge.Enderfuge;
 import com.themastergeneral.enderfuge.client.gui.GUIHandler;
 import com.themastergeneral.enderfuge.common.blocks.ModBlocks;
 import com.themastergeneral.enderfuge.common.config.Config;
+import com.themastergeneral.enderfuge.common.items.ModItems;
 import com.themastergeneral.enderfuge.common.tileentity.TEEnderfuge;
 
 import net.minecraft.item.Item;
@@ -26,6 +27,7 @@ public class CommonProxy {
 				"ctd/enderfuge.cfg"));
 		Config.readConfig();
 		ModBlocks.registerBlocks();
+		ModItems.registerBlocks();
 	}
 
 	public void init(FMLInitializationEvent e) {

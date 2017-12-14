@@ -14,7 +14,7 @@ import com.themastergeneral.enderfuge.common.config.Config;
 public class EnderfugeFuel {
 	private static final EnderfugeFuel SMELTING_BASE = new EnderfugeFuel();
 	/** The list of fuel results. */
-	private final Map<ItemStack, Integer> fuelList = Maps.<ItemStack, Integer> newHashMap();
+	private final static Map<ItemStack, Integer> fuelList = Maps.<ItemStack, Integer> newHashMap();
 	
 	public static EnderfugeFuel instance() {
 		return SMELTING_BASE;
@@ -30,20 +30,20 @@ public class EnderfugeFuel {
 		this.addFuel(new ItemStack(input, 1, 32767), burntime);
 	}
 
-	public void addFuel(ItemStack input, int burntime) {
+	public static void addFuel(ItemStack input, int burntime) {
 		if (getFuelResult(input) != 0) {
 			Enderfuge.logger
 					.info("Ignored Enderfuge fuel with conflicting input: "
 							+ input + ".");
 			return;
 		}
-		this.fuelList.put(input, burntime);
+		fuelList.put(input, burntime);
 
 	}
 
-	public Integer getFuelResult(ItemStack stack) {
-		for (Entry<ItemStack, Integer> entry : this.fuelList.entrySet()) {
-			if (this.compareItemStacks(stack, (ItemStack) entry.getKey())) {
+	public static Integer getFuelResult(ItemStack stack) {
+		for (Entry<ItemStack, Integer> entry : fuelList.entrySet()) {
+			if (compareItemStacks(stack, (ItemStack) entry.getKey())) {
 				return entry.getValue();
 			}
 		}
@@ -51,7 +51,7 @@ public class EnderfugeFuel {
 		return 0;
 	}
 
-	private boolean compareItemStacks(ItemStack stack1, ItemStack stack2) {
+	private static boolean compareItemStacks(ItemStack stack1, ItemStack stack2) {
 		return stack2.getItem() == stack1.getItem()
 				&& (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1
 						.getMetadata());

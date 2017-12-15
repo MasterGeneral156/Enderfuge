@@ -26,7 +26,7 @@ public class IMCHandler {
 				String operation = message.key.toLowerCase(Locale.US);
 
 				switch (operation) {
-				case "ADD_ENDERFUGE_RECIPE":
+				case ADD_ENDERFUGE_RECIPE:
 					if (nbt.hasKey(XP)) {
 						EnderfugeRecipes.instance().addSmeltingRecipe(
 								new ItemStack(nbt.getCompoundTag(INPUT)),
@@ -37,10 +37,12 @@ public class IMCHandler {
 								new ItemStack(nbt.getCompoundTag(INPUT)),
 								new ItemStack(nbt.getCompoundTag(OUTPUT)), 0);
 					}
+					continue;
 				case "ADD_ENDERFUGE_FUEL":
 					EnderfugeFuel.instance().addFuel(
 							new ItemStack(nbt.getCompoundTag(INPUT)),
 							nbt.getInteger(BURNTIME));
+					continue;
 				}
 				Enderfuge.logger.warn("Enderfuge received an invalid IMC from "
 						+ message.getSender() + "! Key was " + message.key);
@@ -59,4 +61,6 @@ public class IMCHandler {
 	static final String XP = "xp";
 	static final String OUTPUT = "output";
 	static final String BURNTIME = "burn";
+	
+	public static final String ADD_ENDERFUGE_RECIPE = "addenderfugerecipe";
 }

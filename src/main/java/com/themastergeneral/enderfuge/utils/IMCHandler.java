@@ -28,17 +28,17 @@ public class IMCHandler {
 				switch (operation) {
 				case "ADD_ENDERFUGE_RECIPE":
 					if (nbt.hasKey(XP)) {
-						EnderfugeRecipes.addSmeltingRecipe(
+						EnderfugeRecipes.instance().addSmeltingRecipe(
 								new ItemStack(nbt.getCompoundTag(INPUT)),
 								new ItemStack(nbt.getCompoundTag(OUTPUT)),
 								nbt.getFloat(XP));
 					} else {
-						EnderfugeRecipes.addSmeltingRecipe(
+						EnderfugeRecipes.instance().addSmeltingRecipe(
 								new ItemStack(nbt.getCompoundTag(INPUT)),
 								new ItemStack(nbt.getCompoundTag(OUTPUT)), 0);
 					}
 				case "ADD_ENDERFUGE_FUEL":
-					EnderfugeFuel.addFuel(
+					EnderfugeFuel.instance().addFuel(
 							new ItemStack(nbt.getCompoundTag(INPUT)),
 							nbt.getInteger(BURNTIME));
 				}

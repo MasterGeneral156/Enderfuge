@@ -10,18 +10,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.google.common.collect.Maps;
-import com.themastergeneral.enderfuge.common.items.ModItems;
 
 public class EnderfugeRecipes {
 	private static final EnderfugeRecipes SMELTING_BASE = new EnderfugeRecipes();
 	/** The list of smelting results. */
-	private final static Map<ItemStack, ItemStack> smeltingList = Maps
+	private final Map<ItemStack, ItemStack> smeltingList = Maps
 			.<ItemStack, ItemStack> newHashMap();
 	/**
 	 * A list which contains how many experience points each recipe output will
 	 * give.
 	 */
-	private final static Map<ItemStack, Float> experienceList = Maps
+	private final Map<ItemStack, Float> experienceList = Maps
 			.<ItemStack, Float> newHashMap();
 
 	/**
@@ -99,35 +98,6 @@ public class EnderfugeRecipes {
 		this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_BOOTS, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				22), 0.7F);
-		
-		//Diamond Nuggets
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_AXE, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				18), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_PICKAXE, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				18), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_SWORD, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				13), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_HOE, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				13), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_SHOVEL, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				4), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_HELMET, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				27), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_CHESTPLATE, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				40), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_LEGGINGS, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				36), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_BOOTS, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				22), 0.7F);
 	}
 
 	/**
@@ -149,7 +119,7 @@ public class EnderfugeRecipes {
 	/**
 	 * Adds a smelting recipe using an ItemStack as the input for the recipe.
 	 */
-	public static void addSmeltingRecipe(ItemStack input, ItemStack stack,
+	public void addSmeltingRecipe(ItemStack input, ItemStack stack,
 			float experience) {
 		if (getSmeltingResult(input) != ItemStack.EMPTY) {
 			net.minecraftforge.fml.common.FMLLog
@@ -157,16 +127,16 @@ public class EnderfugeRecipes {
 							+ input + " = " + stack);
 			return;
 		}
-		smeltingList.put(input, stack);
-		experienceList.put(stack, Float.valueOf(experience));
+		this.smeltingList.put(input, stack);
+		this.experienceList.put(stack, Float.valueOf(experience));
 	}
 
 	/**
 	 * Returns the smelting result of an item.
 	 */
-	public static ItemStack getSmeltingResult(ItemStack stack) {
-		for (Entry<ItemStack, ItemStack> entry : smeltingList.entrySet()) {
-			if (compareItemStacks(stack, (ItemStack) entry.getKey())) {
+	public ItemStack getSmeltingResult(ItemStack stack) {
+		for (Entry<ItemStack, ItemStack> entry : this.smeltingList.entrySet()) {
+			if (this.compareItemStacks(stack, (ItemStack) entry.getKey())) {
 				return (ItemStack) entry.getValue();
 			}
 		}
@@ -178,7 +148,7 @@ public class EnderfugeRecipes {
 	 * Compares two itemstacks to ensure that they are the same. This checks
 	 * both the item and the metadata of the item.
 	 */
-	private static boolean compareItemStacks(ItemStack stack1, ItemStack stack2) {
+	private boolean compareItemStacks(ItemStack stack1, ItemStack stack2) {
 		return stack2.getItem() == stack1.getItem()
 				&& (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1
 						.getMetadata());

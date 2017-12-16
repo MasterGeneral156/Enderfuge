@@ -10,6 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.google.common.collect.Maps;
+import com.themastergeneral.enderfuge.Enderfuge;
+import com.themastergeneral.enderfuge.common.items.ModItems;
 
 public class EnderfugeRecipes {
 	private static final EnderfugeRecipes SMELTING_BASE = new EnderfugeRecipes();
@@ -98,22 +100,60 @@ public class EnderfugeRecipes {
 		this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_BOOTS, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				22), 0.7F);
-	}
-
-	/**
-	 * Adds a smelting recipe, where the input item is an instance of Block.
-	 */
-	public void addSmeltingRecipeForBlock(Block input, ItemStack stack,
-			float experience) {
-		this.addSmelting(Item.getItemFromBlock(input), stack, experience);
+		//Diamond Stuffs
+		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_AXE, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
+				18), 0.7F);
+		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_PICKAXE, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
+				18), 0.7F);
+		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_SWORD, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
+				13), 0.7F);
+		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_HOE, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
+				13), 0.7F);
+		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_SHOVEL, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
+				4), 0.7F);
+		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_HELMET, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
+				27), 0.7F);
+		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_CHESTPLATE, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
+				40), 0.7F);
+		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_LEGGINGS, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
+				36), 0.7F);
+		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_BOOTS, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
+				22), 0.7F);
+		
 	}
 
 	/**
 	 * Adds a smelting recipe using an Item as the input item.
 	 */
-	public void addSmelting(Item input, ItemStack stack, float experience) {
-		this.addSmeltingRecipe(new ItemStack(input, 1, 32767), stack,
-				experience);
+	public void addSmelting(ItemStack input, ItemStack stack, float experience) {
+		this.addSmeltingRecipe(input, stack, experience);
+	}
+
+	public void removeSmelting(ItemStack input, ItemStack stack) {
+		ItemStack result = getSmeltingResult(input);
+		if (result != stack) {
+			Enderfuge.logger
+					.error("Could not remove "
+							+ input
+							+ " = "
+							+ stack
+							+ " recipe, as it does not exist in the Enderfuge registry.");
+			return;
+		}
+		this.smeltingList.remove(input, stack);
+		float xp = getSmeltingExperience(stack);
+		if (xp != 0F) {
+			this.experienceList.remove(stack, xp);
+		}
 	}
 
 	/**
@@ -122,7 +162,7 @@ public class EnderfugeRecipes {
 	public void addSmeltingRecipe(ItemStack input, ItemStack stack,
 			float experience) {
 		if (getSmeltingResult(input) != ItemStack.EMPTY) {
-			net.minecraftforge.fml.common.FMLLog
+			Enderfuge.logger
 					.info("Ignored smelting recipe with conflicting input: "
 							+ input + " = " + stack);
 			return;

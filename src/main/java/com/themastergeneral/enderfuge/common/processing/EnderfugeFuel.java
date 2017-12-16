@@ -3,6 +3,7 @@ package com.themastergeneral.enderfuge.common.processing;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -14,20 +15,29 @@ import com.themastergeneral.enderfuge.common.config.Config;
 public class EnderfugeFuel {
 	private static final EnderfugeFuel SMELTING_BASE = new EnderfugeFuel();
 	/** The list of fuel results. */
-	private final Map<ItemStack, Integer> fuelList = Maps.<ItemStack, Integer> newHashMap();
-	
+	private final Map<ItemStack, Integer> fuelList = Maps
+			.<ItemStack, Integer> newHashMap();
+
 	public static EnderfugeFuel instance() {
 		return SMELTING_BASE;
 	}
-	//Add fuel here.
+
+	// Add fuel here.
 	private EnderfugeFuel() {
-		this.addEnderfugeFuel(Items.ENDER_EYE, Config.eyeFuelTime);
-		this.addEnderfugeFuel(Items.ENDER_PEARL, Config.pearlFuelTime);
-		this.addEnderfugeFuel(Items.END_CRYSTAL, Config.crystalFuelTime);
+		this.addEnderfugeFuel(new ItemStack(Items.ENDER_EYE),
+				Config.eyeFuelTime);
+		this.addEnderfugeFuel(new ItemStack(Items.ENDER_PEARL),
+				Config.pearlFuelTime);
+		this.addEnderfugeFuel(new ItemStack(Items.END_CRYSTAL),
+				Config.crystalFuelTime);
+		this.addEnderfugeFuel(new ItemStack(Items.SHULKER_SHELL),
+				Config.shulkerShellFuelTime);
+		this.addEnderfugeFuel(new ItemStack(Blocks.DRAGON_EGG),
+				Config.dragonEggFuelTime);
 	}
-	
-	public void addEnderfugeFuel(Item input, int burntime) {
-		this.addFuel(new ItemStack(input, 1, 32767), burntime);
+
+	public void addEnderfugeFuel(ItemStack input, int burntime) {
+		this.addFuel(input, burntime);
 	}
 
 	public void addFuel(ItemStack input, int burntime) {
@@ -39,6 +49,16 @@ public class EnderfugeFuel {
 		}
 		this.fuelList.put(input, burntime);
 
+	}
+
+	public void removeFuel(ItemStack input) {
+		if (getFuelResult(input) == 0) {
+			Enderfuge.logger
+					.error("Attempted to remove Enderfuge fuel that isn't registered: "
+							+ input + ".");
+			return;
+		}
+		this.fuelList.remove(input);
 	}
 
 	public Integer getFuelResult(ItemStack stack) {

@@ -14,6 +14,8 @@ public class Config {
 	public static int pearlFuelTime = 1600;
 	public static int eyeFuelTime = 5600;
 	public static int crystalFuelTime = 25000;
+	public static int dragonEggFuelTime = 50000;
+	public static int shulkerShellFuelTime = 800;
 
 	public static void readConfig() {
 		Configuration cfg = CommonProxy.config;
@@ -44,5 +46,11 @@ public class Config {
 		crystalFuelTime = cfg.getInt("End Crystal Fuel Length",
 				CATEGORY_GENERAL, crystalFuelTime, 1, 65655,
 				"How many ticks an End Crystal will fuel the Enderfuge.");
+		dragonEggFuelTime = cfg.getInt("Dragon Egg Fuel Length",
+				CATEGORY_GENERAL, dragonEggFuelTime, 1, 65655,
+				"How many ticks a Dragon Egg will fuel the Enderfuge.");
+		shulkerShellFuelTime = cfg.getInt("Shulker Shell Fuel Length",
+				CATEGORY_GENERAL, shulkerShellFuelTime, 1, 65655,
+				"How many ticks a Shulker Shell will fuel the Enderfuge.");
 	}
 }

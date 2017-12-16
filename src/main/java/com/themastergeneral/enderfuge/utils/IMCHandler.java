@@ -44,8 +44,9 @@ public class IMCHandler {
 							nbt.getInteger(BURNTIME));
 					continue;
 				case REMOVE_ENDERFUGE_RECIPE:
-					EnderfugeFuel.instance().removeFuel(
-							new ItemStack(nbt.getCompoundTag(INPUT)));
+					EnderfugeRecipes.instance().removeSmelting(
+							new ItemStack(nbt.getCompoundTag(INPUT)),
+							new ItemStack(nbt.getCompoundTag(OUTPUT)));
 					continue;
 				case REMOVE_ENDERFUGE_FUEL:
 					EnderfugeFuel.instance().removeFuel(

@@ -38,10 +38,18 @@ public class IMCHandler {
 								new ItemStack(nbt.getCompoundTag(OUTPUT)), 0);
 					}
 					continue;
-				case "ADD_ENDERFUGE_FUEL":
+				case ADD_ENDERFUGE_FUEL:
 					EnderfugeFuel.instance().addFuel(
 							new ItemStack(nbt.getCompoundTag(INPUT)),
 							nbt.getInteger(BURNTIME));
+					continue;
+				case REMOVE_ENDERFUGE_RECIPE:
+					EnderfugeFuel.instance().removeFuel(
+							new ItemStack(nbt.getCompoundTag(INPUT)));
+					continue;
+				case REMOVE_ENDERFUGE_FUEL:
+					EnderfugeFuel.instance().removeFuel(
+							new ItemStack(nbt.getCompoundTag(INPUT)));
 					continue;
 				}
 				Enderfuge.logger.warn("Enderfuge received an invalid IMC from "
@@ -63,4 +71,7 @@ public class IMCHandler {
 	static final String BURNTIME = "burn";
 	
 	public static final String ADD_ENDERFUGE_RECIPE = "addenderfugerecipe";
+	public static final String ADD_ENDERFUGE_FUEL = "addenderfugefuel";
+	public static final String REMOVE_ENDERFUGE_RECIPE = "removeenderfugerecipe";
+	public static final String REMOVE_ENDERFUGE_FUEL = "removeenderfugefuel";
 }

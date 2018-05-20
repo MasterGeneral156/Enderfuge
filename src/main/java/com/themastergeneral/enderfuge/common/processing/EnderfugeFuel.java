@@ -24,20 +24,20 @@ public class EnderfugeFuel {
 
 	// Add fuel here.
 	private EnderfugeFuel() {
-		this.addEnderfugeFuel(new ItemStack(Items.ENDER_EYE),
+		addEnderfugeFuel(new ItemStack(Items.ENDER_EYE),
 				Config.eyeFuelTime);
-		this.addEnderfugeFuel(new ItemStack(Items.ENDER_PEARL),
+		addEnderfugeFuel(new ItemStack(Items.ENDER_PEARL),
 				Config.pearlFuelTime);
-		this.addEnderfugeFuel(new ItemStack(Items.END_CRYSTAL),
+		addEnderfugeFuel(new ItemStack(Items.END_CRYSTAL),
 				Config.crystalFuelTime);
-		this.addEnderfugeFuel(new ItemStack(Items.SHULKER_SHELL),
+		addEnderfugeFuel(new ItemStack(Items.SHULKER_SHELL),
 				Config.shulkerShellFuelTime);
-		this.addEnderfugeFuel(new ItemStack(Blocks.DRAGON_EGG),
+		addEnderfugeFuel(new ItemStack(Blocks.DRAGON_EGG),
 				Config.dragonEggFuelTime);
 	}
 
 	public void addEnderfugeFuel(ItemStack input, int burntime) {
-		this.addFuel(input, burntime);
+		addFuel(input, burntime);
 	}
 
 	public void addFuel(ItemStack input, int burntime) {
@@ -47,7 +47,7 @@ public class EnderfugeFuel {
 							+ input + ".");
 			return;
 		}
-		this.fuelList.put(input, burntime);
+		fuelList.put(input, burntime);
 
 	}
 
@@ -58,12 +58,12 @@ public class EnderfugeFuel {
 							+ input + ".");
 			return;
 		}
-		this.fuelList.remove(input);
+		fuelList.remove(input);
 	}
 
 	public Integer getFuelResult(ItemStack stack) {
-		for (Entry<ItemStack, Integer> entry : this.fuelList.entrySet()) {
-			if (this.compareItemStacks(stack, (ItemStack) entry.getKey())) {
+		for (Entry<ItemStack, Integer> entry : fuelList.entrySet()) {
+			if (compareItemStacks(stack, (ItemStack) entry.getKey())) {
 				return entry.getValue();
 			}
 		}
@@ -78,6 +78,6 @@ public class EnderfugeFuel {
 	}
 
 	public Map<ItemStack, Integer> getSmeltingList() {
-		return this.fuelList;
+		return fuelList;
 	}
 }

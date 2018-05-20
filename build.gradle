@@ -24,7 +24,7 @@ minecraft
 {
     version = "${forge_version}"
     runDir = "run"
-    mappings = "snapshot_20170624"
+    mappings = "snapshot_20171003"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 

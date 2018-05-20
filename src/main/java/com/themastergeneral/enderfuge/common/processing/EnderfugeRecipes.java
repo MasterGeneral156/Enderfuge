@@ -33,109 +33,126 @@ public class EnderfugeRecipes {
 	}
 
 	private EnderfugeRecipes() {
-		this.addSmeltingRecipe(new ItemStack(Items.GOLDEN_AXE, 1,
+
+		// Gold stuff
+		addSmeltingRecipe(new ItemStack(Items.GOLDEN_AXE, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
 				18), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.GOLDEN_PICKAXE, 1,
+		addSmeltingRecipe(new ItemStack(Items.GOLDEN_PICKAXE, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
 				18), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.GOLDEN_SWORD, 1,
+		addSmeltingRecipe(new ItemStack(Items.GOLDEN_SWORD, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
 				13), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.GOLDEN_HOE, 1,
+		addSmeltingRecipe(new ItemStack(Items.GOLDEN_HOE, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
 				13), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.GOLDEN_SHOVEL, 1,
+		addSmeltingRecipe(new ItemStack(Items.GOLDEN_SHOVEL, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
 				4), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.GOLDEN_HELMET, 1,
+		addSmeltingRecipe(new ItemStack(Items.GOLDEN_HELMET, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
 				27), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.GOLDEN_CHESTPLATE, 1,
+		addSmeltingRecipe(new ItemStack(Items.GOLDEN_CHESTPLATE, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
 				40), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.GOLDEN_LEGGINGS, 1,
+		addSmeltingRecipe(new ItemStack(Items.GOLDEN_LEGGINGS, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
 				36), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.GOLDEN_BOOTS, 1,
+		addSmeltingRecipe(new ItemStack(Items.GOLDEN_BOOTS, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
 				22), 0.7F);
 
-		this.addSmeltingRecipe(new ItemStack(Items.IRON_AXE, 1,
+		// Iron Stuff
+		addSmeltingRecipe(new ItemStack(Items.IRON_AXE, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				18), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.IRON_PICKAXE, 1,
+		addSmeltingRecipe(new ItemStack(Items.IRON_PICKAXE, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				18), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.IRON_SWORD, 1,
+		addSmeltingRecipe(new ItemStack(Items.IRON_SWORD, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				13), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.IRON_HOE, 1,
+		addSmeltingRecipe(new ItemStack(Items.IRON_HOE, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				13), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.IRON_SHOVEL, 1,
+		addSmeltingRecipe(new ItemStack(Items.IRON_SHOVEL, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				4), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.IRON_HELMET, 1,
+		addSmeltingRecipe(new ItemStack(Items.IRON_HELMET, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				27), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.IRON_CHESTPLATE, 1,
+		addSmeltingRecipe(new ItemStack(Items.IRON_CHESTPLATE, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				40), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.IRON_LEGGINGS, 1,
+		addSmeltingRecipe(new ItemStack(Items.IRON_LEGGINGS, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				36), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.IRON_BOOTS, 1,
+		addSmeltingRecipe(new ItemStack(Items.IRON_BOOTS, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				22), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_HELMET, 1,
+
+		// Chainmail stuff
+		addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_HELMET, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				27), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_CHESTPLATE, 1,
+		addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_CHESTPLATE, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				40), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_LEGGINGS, 1,
+		addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_LEGGINGS, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				36), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_BOOTS, 1,
+		addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_BOOTS, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				22), 0.7F);
-		//Diamond Stuffs
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_AXE, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				18), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_PICKAXE, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				18), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_SWORD, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				13), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_HOE, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				13), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_SHOVEL, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				4), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_HELMET, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				27), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_CHESTPLATE, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				40), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_LEGGINGS, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				36), 0.7F);
-		this.addSmeltingRecipe(new ItemStack(Items.DIAMOND_BOOTS, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
-				22), 0.7F);
-		
+
+		// Diamond Stuffs
+		addSmeltingRecipe(new ItemStack(Items.DIAMOND_AXE, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(
+				ModItems.nuggetdiamond, 18), 0.7F);
+		addSmeltingRecipe(new ItemStack(Items.DIAMOND_PICKAXE, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(
+				ModItems.nuggetdiamond, 18), 0.7F);
+		addSmeltingRecipe(new ItemStack(Items.DIAMOND_SWORD, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(
+				ModItems.nuggetdiamond, 13), 0.7F);
+		addSmeltingRecipe(new ItemStack(Items.DIAMOND_HOE, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(
+				ModItems.nuggetdiamond, 13), 0.7F);
+		addSmeltingRecipe(new ItemStack(Items.DIAMOND_SHOVEL, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(
+				ModItems.nuggetdiamond, 4), 0.7F);
+		addSmeltingRecipe(new ItemStack(Items.DIAMOND_HELMET, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(
+				ModItems.nuggetdiamond, 27), 0.7F);
+		addSmeltingRecipe(new ItemStack(Items.DIAMOND_CHESTPLATE, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(
+				ModItems.nuggetdiamond, 40), 0.7F);
+		addSmeltingRecipe(new ItemStack(Items.DIAMOND_LEGGINGS, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(
+				ModItems.nuggetdiamond, 36), 0.7F);
+		addSmeltingRecipe(new ItemStack(Items.DIAMOND_BOOTS, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(
+				ModItems.nuggetdiamond, 22), 0.7F);
+
+		// Horse Armors
+		addSmeltingRecipe(new ItemStack(Items.DIAMOND_HORSE_ARMOR, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(
+				ModItems.nuggetdiamond, 15), 0.7F);
+		addSmeltingRecipe(new ItemStack(Items.IRON_HORSE_ARMOR, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
+				15), 0.7F);
+		addSmeltingRecipe(new ItemStack(Items.GOLDEN_HORSE_ARMOR, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
+				15), 0.7F);
+
 	}
 
 	/**
 	 * Adds a smelting recipe using an Item as the input item.
 	 */
 	public void addSmelting(ItemStack input, ItemStack stack, float experience) {
-		this.addSmeltingRecipe(input, stack, experience);
+		addSmeltingRecipe(input, stack, experience);
 	}
 
 	public void removeSmelting(ItemStack input, ItemStack stack) {
@@ -149,10 +166,10 @@ public class EnderfugeRecipes {
 							+ " recipe, as it does not exist in the Enderfuge registry.");
 			return;
 		}
-		this.smeltingList.remove(input, stack);
+		smeltingList.remove(input, stack);
 		float xp = getSmeltingExperience(stack);
 		if (xp != 0F) {
-			this.experienceList.remove(stack, xp);
+			experienceList.remove(stack, xp);
 		}
 	}
 
@@ -167,16 +184,16 @@ public class EnderfugeRecipes {
 							+ input + " = " + stack);
 			return;
 		}
-		this.smeltingList.put(input, stack);
-		this.experienceList.put(stack, Float.valueOf(experience));
+		smeltingList.put(input, stack);
+		experienceList.put(stack, Float.valueOf(experience));
 	}
 
 	/**
 	 * Returns the smelting result of an item.
 	 */
 	public ItemStack getSmeltingResult(ItemStack stack) {
-		for (Entry<ItemStack, ItemStack> entry : this.smeltingList.entrySet()) {
-			if (this.compareItemStacks(stack, (ItemStack) entry.getKey())) {
+		for (Entry<ItemStack, ItemStack> entry : smeltingList.entrySet()) {
+			if (compareItemStacks(stack, (ItemStack) entry.getKey())) {
 				return (ItemStack) entry.getValue();
 			}
 		}
@@ -195,7 +212,7 @@ public class EnderfugeRecipes {
 	}
 
 	public Map<ItemStack, ItemStack> getSmeltingList() {
-		return this.smeltingList;
+		return smeltingList;
 	}
 
 	public float getSmeltingExperience(ItemStack stack) {
@@ -203,8 +220,8 @@ public class EnderfugeRecipes {
 		if (ret != -1)
 			return ret;
 
-		for (Entry<ItemStack, Float> entry : this.experienceList.entrySet()) {
-			if (this.compareItemStacks(stack, (ItemStack) entry.getKey())) {
+		for (Entry<ItemStack, Float> entry : experienceList.entrySet()) {
+			if (compareItemStacks(stack, (ItemStack) entry.getKey())) {
 				return ((Float) entry.getValue()).floatValue();
 			}
 		}

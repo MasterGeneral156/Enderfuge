@@ -16,6 +16,9 @@ public class Config {
 	public static int crystalFuelTime = 25000;
 	public static int dragonEggFuelTime = 50000;
 	public static int shulkerShellFuelTime = 800;
+	
+	private static final String CATEGORY_INTEGRATION = "Integration";
+	public static boolean ic2compat = true;
 
 	public static void readConfig() {
 		Configuration cfg = CommonProxy.config;
@@ -52,5 +55,10 @@ public class Config {
 		shulkerShellFuelTime = cfg.getInt("Shulker Shell Fuel Length",
 				CATEGORY_GENERAL, shulkerShellFuelTime, 1, 65655,
 				"How many ticks a Shulker Shell will fuel the Enderfuge.");
+		
+		//Integration Options
+		cfg.addCustomCategoryComment(CATEGORY_INTEGRATION,
+				"Integration in EnderFuge.");
+		ic2compat = cfg.getBoolean("IC2 Integration", CATEGORY_INTEGRATION, ic2compat, "Enable integration with IC2?");
 	}
 }

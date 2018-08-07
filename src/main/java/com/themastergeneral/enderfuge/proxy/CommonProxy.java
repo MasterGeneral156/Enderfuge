@@ -8,6 +8,7 @@ import com.themastergeneral.enderfuge.common.blocks.ModBlocks;
 import com.themastergeneral.enderfuge.common.config.Config;
 import com.themastergeneral.enderfuge.common.items.ModItems;
 import com.themastergeneral.enderfuge.common.tileentity.TEEnderfuge;
+import com.themastergeneral.enderfuge.integration.Integration;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
@@ -28,6 +29,7 @@ public class CommonProxy {
 		Config.readConfig();
 		ModBlocks.registerBlocks();
 		ModItems.registerBlocks();
+		Integration.loadIntegration();
 	}
 
 	public void init(FMLInitializationEvent e) {

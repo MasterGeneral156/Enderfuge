@@ -29,6 +29,7 @@ public class CommonProxy {
 		Config.readConfig();
 		ModBlocks.registerBlocks();
 		ModItems.registerBlocks();
+		Integration.loadIntegration();
 	}
 
 	public void init(FMLInitializationEvent e) {
@@ -45,7 +46,6 @@ public class CommonProxy {
 		if (config.hasChanged()) {
 			config.save();
 		}
-		Integration.loadIntegration();
 	}
 
 	public void registerItemRenderer(Item itemBlock, int i, String name) {

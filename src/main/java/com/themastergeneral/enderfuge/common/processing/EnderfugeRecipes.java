@@ -16,13 +16,13 @@ import com.themastergeneral.enderfuge.common.items.ModItems;
 public class EnderfugeRecipes {
 	private static final EnderfugeRecipes SMELTING_BASE = new EnderfugeRecipes();
 	/** The list of smelting results. */
-	private final static Map<ItemStack, ItemStack> smeltingList = Maps
+	private final Map<ItemStack, ItemStack> smeltingList = Maps
 			.<ItemStack, ItemStack> newHashMap();
 	/**
 	 * A list which contains how many experience points each recipe output will
 	 * give.
 	 */
-	private final static Map<ItemStack, Float> experienceList = Maps
+	private final Map<ItemStack, Float> experienceList = Maps
 			.<ItemStack, Float> newHashMap();
 
 	/**
@@ -176,7 +176,7 @@ public class EnderfugeRecipes {
 	/**
 	 * Adds a smelting recipe using an ItemStack as the input for the recipe.
 	 */
-	public static void addSmeltingRecipe(ItemStack input, ItemStack stack,
+	public void addSmeltingRecipe(ItemStack input, ItemStack stack,
 			float experience) {
 		if (getSmeltingResult(input) != ItemStack.EMPTY) {
 			Enderfuge.logger
@@ -191,7 +191,7 @@ public class EnderfugeRecipes {
 	/**
 	 * Returns the smelting result of an item.
 	 */
-	public static ItemStack getSmeltingResult(ItemStack stack) {
+	public ItemStack getSmeltingResult(ItemStack stack) {
 		for (Entry<ItemStack, ItemStack> entry : smeltingList.entrySet()) {
 			if (compareItemStacks(stack, (ItemStack) entry.getKey())) {
 				return (ItemStack) entry.getValue();
@@ -205,7 +205,7 @@ public class EnderfugeRecipes {
 	 * Compares two itemstacks to ensure that they are the same. This checks
 	 * both the item and the metadata of the item.
 	 */
-	private static boolean compareItemStacks(ItemStack stack1, ItemStack stack2) {
+	private boolean compareItemStacks(ItemStack stack1, ItemStack stack2) {
 		return stack2.getItem() == stack1.getItem()
 				&& (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1
 						.getMetadata());

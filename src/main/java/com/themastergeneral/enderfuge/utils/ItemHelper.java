@@ -3,27 +3,28 @@ package com.themastergeneral.enderfuge.utils;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ItemHelper {
 
 	/* TODO: Move to CTD Core */
 	public static ItemStack returnStackFromRegistryName(String name)
 	{
-		if (name.isEmpty())
-		{
+		if (Item.REGISTRY.getObject(new ResourceLocation(name)) == null)
 			return ItemStack.EMPTY;
-		}
-		return new ItemStack(Item.getByNameOrId(name));
+		else
+			return new ItemStack(Item.REGISTRY.getObject(new ResourceLocation(name)));
 	}
 	
 	public static Item returnItemFromRegistryName(String name)
 	{
-		Item returned = Item.getByNameOrId(name);
-		if (returned == null)
+		//return Item.REGISTRY.getObject(new ResourceLocation(name));
+		if (Item.REGISTRY.containsKey(new ResourceLocation(name)))
 		{
-			return Item.getByNameOrId("minecraft:air");
+			return Item.REGISTRY.getObject(new ResourceLocation(name));
 		}
-		else
-			return returned;
+		return null;
+		
 	}
 }

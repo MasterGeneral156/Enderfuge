@@ -11,12 +11,14 @@ import com.themastergeneral.enderfuge.common.processing.EnderfugeRecipes;
 public class Integration {
 	public static void loadIntegration() {
 		loadIC2();
+		loadTF();
 	}
 
 	public static void addSmeltingRecipe(ItemStack input, ItemStack stack,
 			float experience) {
 		EnderfugeRecipes.instance().addSmeltingRecipe(input, stack, experience);
 	}
+
 	public static void addEnderfugeFuel(ItemStack input, int burntime) {
 		EnderfugeFuel.instance().addEnderfugeFuel(input, burntime);
 	}
@@ -28,6 +30,16 @@ public class Integration {
 		} else {
 			Enderfuge.logger
 					.info("IC2 integration disabled, or IC2 not loaded.");
+		}
+	}
+
+	public static void loadTF() {
+		if (Config.tfcompat && Loader.isModLoaded("thermalfoundation")) {
+			TFIntegration.loadTF();
+			Enderfuge.logger.info("Loading Thermal Foundation integration.");
+		} else {
+			Enderfuge.logger
+					.info("Thermal Foundation integration disabled, or Thermal Foundation not loaded.");
 		}
 	}
 }

@@ -19,6 +19,7 @@ public class Config {
 
 	private static final String CATEGORY_INTEGRATION = "Integration";
 	public static boolean ic2compat = true;
+	public static boolean tfcompat = true;
 
 	public static void readConfig() {
 		Configuration cfg = CommonProxy.config;
@@ -61,5 +62,7 @@ public class Config {
 				"Integration in EnderFuge.");
 		ic2compat = cfg.getBoolean("IC2 Integration", CATEGORY_INTEGRATION,
 				ic2compat, "Enable integration with IC2?");
+		tfcompat = cfg.getBoolean("Thermal Foundation Integration", CATEGORY_INTEGRATION,
+				tfcompat, "Enable integration with Thermal Foundation?");
 	}
 }

@@ -16,6 +16,7 @@ public class Config {
 	public static int crystalFuelTime = 25000;
 	public static int dragonEggFuelTime = 50000;
 	public static int shulkerShellFuelTime = 800;
+	public static boolean creativeFuelItems = true;
 
 	private static final String CATEGORY_INTEGRATION = "Integration";
 	public static boolean ic2compat = true;
@@ -56,6 +57,8 @@ public class Config {
 		shulkerShellFuelTime = cfg.getInt("Shulker Shell Fuel Length",
 				CATEGORY_GENERAL, shulkerShellFuelTime, 1, 65655,
 				"How many ticks a Shulker Shell will fuel the Enderfuge.");
+		creativeFuelItems = cfg.getBoolean("Creative Fuel Items", CATEGORY_INTEGRATION,
+				creativeFuelItems, "Enable the creative fuel items? They're silly and probably stupidly balanced. You've been warned.");
 
 		// Integration Options
 		cfg.addCustomCategoryComment(CATEGORY_INTEGRATION,

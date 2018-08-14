@@ -20,6 +20,7 @@ public class TFIntegration {
 		electrum();
 		bronze();
 		constantan();
+		fuel();
 	}
 
 	public static void invar() {
@@ -1136,5 +1137,28 @@ public class TFIntegration {
 								StackHelper
 										.itemFromRegistryName("thermalfoundation:material"),
 								22, 228), 0.7F);
+	}
+
+	public static void fuel() {
+		Integration.addEnderfugeFuel(
+				new ItemStack(StackHelper
+						.itemFromRegistryName("thermalfoundation:material"), 1,
+						1024), 800);
+		Integration.addEnderfugeFuel(
+				new ItemStack(StackHelper
+						.itemFromRegistryName("thermalfoundation:material"), 1,
+						1025), 1600);
+		Integration.addEnderfugeFuel(
+				new ItemStack(StackHelper
+						.itemFromRegistryName("thermalfoundation:material"), 1,
+						1026), 3200);
+		Integration.addEnderfugeFuel(
+				new ItemStack(StackHelper
+						.itemFromRegistryName("thermalfoundation:material"), 1,
+						1027), 6400);
+		Integration.addEnderfugeFuel(
+				new ItemStack(StackHelper
+						.itemFromRegistryName("thermalfoundation:material"), 1,
+						1028), 12800);
 	}
 }

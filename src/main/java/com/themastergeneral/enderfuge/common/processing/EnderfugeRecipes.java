@@ -11,6 +11,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.google.common.collect.Maps;
 import com.themastergeneral.enderfuge.Enderfuge;
+import com.themastergeneral.enderfuge.common.blocks.ModBlocks;
 import com.themastergeneral.enderfuge.common.items.ModItems;
 
 public class EnderfugeRecipes {
@@ -62,6 +63,8 @@ public class EnderfugeRecipes {
 		addSmeltingRecipe(new ItemStack(Items.GOLDEN_BOOTS, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
 				22), 0.7F);
+		addSmeltingRecipe(new ItemStack(ModBlocks.enderfuge), new ItemStack(
+				ModBlocks.enderfuge_active), 0);
 
 		// Iron Stuff
 		addSmeltingRecipe(new ItemStack(Items.IRON_AXE, 1,

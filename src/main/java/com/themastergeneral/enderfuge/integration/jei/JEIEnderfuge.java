@@ -44,5 +44,6 @@ public class JEIEnderfuge implements IModPlugin {
 		recipeTransferRegistry.addRecipeTransferHandler(ContainerEnderfuge.class, "enderfuge.fuel", 1, 1, 3, 36);
 		
 		registry.addRecipeCatalyst(new ItemStack(ModBlocks.enderfuge), "enderfuge.enderfuge", "enderfuge.fuel");
+		registry.addRecipeCatalyst(new ItemStack(ModBlocks.enderfuge_active), "enderfuge.enderfuge", "enderfuge.fuel");
 	}
 }

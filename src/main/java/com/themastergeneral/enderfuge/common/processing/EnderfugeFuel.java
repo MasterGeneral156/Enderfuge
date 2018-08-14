@@ -39,7 +39,6 @@ public class EnderfugeFuel {
 			addEnderfugeFuel(new ItemStack(Blocks.REPEATING_COMMAND_BLOCK), Integer.MAX_VALUE);
 			addEnderfugeFuel(new ItemStack(Blocks.CHAIN_COMMAND_BLOCK), Integer.MAX_VALUE);
 			addEnderfugeFuel(new ItemStack(Items.COMMAND_BLOCK_MINECART), Integer.MAX_VALUE);
-			//addEnderfugeFuel(new ItemStack(Blocks.BEDROCK), Integer.MAX_VALUE);
 		}
 	}
 

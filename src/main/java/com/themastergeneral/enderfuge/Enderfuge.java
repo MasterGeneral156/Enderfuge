@@ -15,6 +15,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import org.apache.logging.log4j.Logger;
 
+import com.themastergeneral.enderfuge.client.creativetab.EnderfugeTab;
 import com.themastergeneral.enderfuge.proxy.CommonProxy;
 import com.themastergeneral.enderfuge.utils.IMCHandler;
 
@@ -28,6 +29,8 @@ public class Enderfuge {
 	public static final String updateJSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/Enderfuge.json";
 	public static final String Fingerprint = "b50fe22651b9d97d9d6631514a6a57cd6174b0dc";
 
+	public static final EnderfugeTab creativeTab = new EnderfugeTab();
+	
 	@Instance
 	public static Enderfuge instance = new Enderfuge();
 

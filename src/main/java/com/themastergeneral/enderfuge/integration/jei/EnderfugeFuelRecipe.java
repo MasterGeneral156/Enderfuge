@@ -37,10 +37,10 @@ public class EnderfugeFuelRecipe implements IRecipeWrapper {
 			NumberFormat numberInstance = NumberFormat.getNumberInstance();
 			numberInstance.setMaximumFractionDigits(2);
 			String smeltCount = numberInstance.format(burnTime / (float) Config.smeltTime);
-			this.smeltCountString = "Smelts " + smeltCount + " items." ;
+			this.smeltCountString = "Smelts: " + smeltCount + " items." ;
 		}
 
-		this.burnTimeString = "Burns for " + burnTime + " ticks.";
+		this.burnTimeString = "Burn: " + burnTime + " ticks.";
 
 		IDrawableStatic flameDrawable = guiHelper.createDrawable(backgroundLocation, 82, 114, 14, 14);
 		this.flame = guiHelper.createAnimatedDrawable(flameDrawable, burnTime, IDrawableAnimated.StartDirection.TOP, true);
@@ -54,7 +54,7 @@ public class EnderfugeFuelRecipe implements IRecipeWrapper {
 	@Override
 	public void drawInfo(Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
 		flame.draw(minecraft, 1, 0);
-		minecraft.fontRenderer.drawString(smeltCountString, 24, 8, Color.gray.getRGB());
-		minecraft.fontRenderer.drawString(burnTimeString, 24, 18, Color.gray.getRGB());
+		minecraft.fontRenderer.drawString(smeltCountString, 24, 8, Color.black.getRGB());
+		minecraft.fontRenderer.drawString(burnTimeString, 24, 18, Color.black.getRGB());
 	}
 }

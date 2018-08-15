@@ -35,7 +35,7 @@ public class EnderfugeSmeltingRecipe implements IRecipeWrapper {
 			String experienceString = "XP:" + experience;
 			FontRenderer fontRenderer = minecraft.fontRenderer;
 			int stringWidth = fontRenderer.getStringWidth(experienceString);
-			fontRenderer.drawString(experienceString, recipeWidth - stringWidth, 0, Color.gray.getRGB());
+			fontRenderer.drawString(experienceString, recipeWidth - stringWidth, 0, Color.black.getRGB());
 		}
 	}
 }

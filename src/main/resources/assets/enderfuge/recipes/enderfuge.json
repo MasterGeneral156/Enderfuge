@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "group": "enderfuge",
+    "group": "enderfuge:enderfuge",
     "pattern": [
         "PPP",
         "PEP",
@@ -9,7 +9,7 @@
     "key": {
         "P": { "item": "minecraft:purpur_block" },
         "E": { "item": "minecraft:end_crystal" },
-        "O": { "item": "minecraft:obsidian" }
+        "O": [{"type": "forge:ore_dict", "ore": "obsidian"}]
     },
     "result": {
         "item": "enderfuge:enderfuge",

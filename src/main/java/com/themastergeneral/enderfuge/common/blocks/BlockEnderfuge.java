@@ -50,7 +50,7 @@ public class BlockEnderfuge extends BlockContainer implements
 	public BlockEnderfuge(String unlocalizedName, Boolean isBurning) {
 		super(Material.ROCK);
 		this.setUnlocalizedName(unlocalizedName);
-		this.setCreativeTab(CreativeTabs.MISC);
+		this.setCreativeTab(Enderfuge.creativeTab);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(
 				FACING, EnumFacing.NORTH));
 		this.setRegistryName(unlocalizedName);

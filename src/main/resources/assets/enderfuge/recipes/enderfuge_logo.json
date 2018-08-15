@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "enderfuge:enderfuge_logo",
+    "pattern": [
+        "PPP",
+        "PEP",
+        "PPP"
+    ],
+    "key": {
+        "P": [{"type": "forge:ore_dict", "ore": "paper"}],
+        "E": { "item": "enderfuge:enderfuge" }
+    },
+    "result": {
+        "item": "enderfuge:enderfuge_logo",
+        "data": 0
+    }
+}

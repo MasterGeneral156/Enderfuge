@@ -38,6 +38,7 @@ import com.themastergeneral.ctdcore.client.BlockRenderRegister;
 import com.themastergeneral.ctdcore.client.ItemModelProvider;
 import com.themastergeneral.enderfuge.Enderfuge;
 import com.themastergeneral.enderfuge.client.gui.GUIHandler;
+import com.themastergeneral.enderfuge.common.config.Config;
 import com.themastergeneral.enderfuge.common.tileentity.TEEnderfuge;
 
 public class BlockEnderfuge extends BlockContainer implements
@@ -54,6 +55,7 @@ public class BlockEnderfuge extends BlockContainer implements
 		this.setDefaultState(this.blockState.getBaseState().withProperty(
 				FACING, EnumFacing.NORTH));
 		this.setRegistryName(unlocalizedName);
+		this.setHardness(10F);
 		this.isBurning = isBurning;
 		this.name = unlocalizedName;
 	}

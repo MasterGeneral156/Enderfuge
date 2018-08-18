@@ -9,20 +9,22 @@ import com.themastergeneral.enderfuge.proxy.CommonProxy;
 
 public class Config {
 
-	private static final String CATEGORY_GENERAL = "General";
+	private static final String CATEGORY_GENERAL = "Balance";
 	public static int smeltTime = 400;
 	public static int pearlFuelTime = 1600;
 	public static int eyeFuelTime = 5600;
 	public static int crystalFuelTime = 25000;
 	public static int dragonEggFuelTime = 50000;
 	public static int shulkerShellFuelTime = 800;
-	public static boolean creativeFuelItems = true;
 
 	private static final String CATEGORY_INTEGRATION = "Integration";
 	public static boolean ic2compat = true;
 	public static boolean tfcompat = true;
 	public static boolean eu2compat = true;
 	public static boolean pslcompat = true;
+
+	private static final String CATEGORY_MISC = "Miscellaneous";
+	public static boolean creativeFuelItems = true;
 
 	public static void readConfig() {
 		Configuration cfg = CommonProxy.config;
@@ -41,7 +43,7 @@ public class Config {
 
 	private static void initGeneralConfig(Configuration cfg) {
 		cfg.addCustomCategoryComment(CATEGORY_GENERAL,
-				"General configuration for the Enderfuge mod.");
+				"General balance for Enderfuge.");
 		smeltTime = cfg.getInt("Smelting Time", CATEGORY_GENERAL, smeltTime, 1,
 				65655, "How many ticks between a successful smelt.");
 		pearlFuelTime = cfg.getInt("Ender Pearl Fuel Length", CATEGORY_GENERAL,
@@ -59,19 +61,29 @@ public class Config {
 		shulkerShellFuelTime = cfg.getInt("Shulker Shell Fuel Length",
 				CATEGORY_GENERAL, shulkerShellFuelTime, 1, 65655,
 				"How many ticks a Shulker Shell will fuel the Enderfuge.");
-		creativeFuelItems = cfg.getBoolean("Creative Fuel Items", CATEGORY_INTEGRATION,
-				creativeFuelItems, "Enable the creative fuel items? They're silly and probably stupidly balanced. You've been warned.");
+
+		// Misc Options
+		cfg.addCustomCategoryComment(CATEGORY_MISC, "Miscellaneous");
+		creativeFuelItems = cfg
+				.getBoolean(
+						"Creative Fuel Items",
+						CATEGORY_MISC,
+						creativeFuelItems,
+						"Enable the creative fuel items? They're silly and probably stupidly balanced. You've been warned.");
 
 		// Integration Options
 		cfg.addCustomCategoryComment(CATEGORY_INTEGRATION,
 				"Integration in EnderFuge.");
 		ic2compat = cfg.getBoolean("IC2 Integration", CATEGORY_INTEGRATION,
 				ic2compat, "Enable integration with IC2?");
-		tfcompat = cfg.getBoolean("Thermal Foundation Integration", CATEGORY_INTEGRATION,
-				tfcompat, "Enable integration with Thermal Foundation?");
-		eu2compat = cfg.getBoolean("Extra Utilities 2 Integration", CATEGORY_INTEGRATION,
-				eu2compat, "Enable integration with Extra Utilities?");
-		pslcompat = cfg.getBoolean("Pumpkin Spice Latte Integration", CATEGORY_INTEGRATION,
-				pslcompat, "Enable integration with Pumpkin Spice Latte?");
+		tfcompat = cfg.getBoolean("Thermal Foundation Integration",
+				CATEGORY_INTEGRATION, tfcompat,
+				"Enable integration with Thermal Foundation?");
+		eu2compat = cfg.getBoolean("Extra Utilities 2 Integration",
+				CATEGORY_INTEGRATION, eu2compat,
+				"Enable integration with Extra Utilities?");
+		pslcompat = cfg.getBoolean("Pumpkin Spice Latte Integration",
+				CATEGORY_INTEGRATION, pslcompat,
+				"Enable integration with Pumpkin Spice Latte?");
 	}
 }

@@ -37,7 +37,7 @@ public class Integration {
 
 	public static void loadTF() {
 		if (Config.tfcompat && Loader.isModLoaded("thermalfoundation")) {
-			EU2Integration.loadEU2();
+			TFIntegration.lead();
 			Enderfuge.logger.info("Loading Thermal Foundation integration.");
 		} else {
 			Enderfuge.logger

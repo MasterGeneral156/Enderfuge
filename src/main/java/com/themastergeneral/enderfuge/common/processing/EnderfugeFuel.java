@@ -13,7 +13,7 @@ import com.themastergeneral.enderfuge.Enderfuge;
 import com.themastergeneral.enderfuge.common.config.Config;
 
 public class EnderfugeFuel {
-	private static final EnderfugeFuel SMELTING_BASE = new EnderfugeFuel();
+	private static EnderfugeFuel SMELTING_BASE = new EnderfugeFuel();
 	/** The list of fuel results. */
 	private final Map<ItemStack, Integer> fuelList = Maps
 			.<ItemStack, Integer> newHashMap();

@@ -15,7 +15,7 @@ import com.themastergeneral.enderfuge.common.blocks.ModBlocks;
 import com.themastergeneral.enderfuge.common.items.ModItems;
 
 public class EnderfugeRecipes {
-	private static final EnderfugeRecipes SMELTING_BASE = new EnderfugeRecipes();
+	private static EnderfugeRecipes SMELTING_BASE = new EnderfugeRecipes();
 	/** The list of smelting results. */
 	private final Map<ItemStack, ItemStack> smeltingList = Maps
 			.<ItemStack, ItemStack> newHashMap();

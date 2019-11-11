@@ -3,16 +3,15 @@ package com.themastergeneral.enderfuge.common.processing;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import net.minecraft.block.Block;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
-
 import com.google.common.collect.Maps;
 import com.themastergeneral.enderfuge.Enderfuge;
 import com.themastergeneral.enderfuge.common.blocks.ModBlocks;
 import com.themastergeneral.enderfuge.common.items.ModItems;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class EnderfugeRecipes {
 	private static EnderfugeRecipes SMELTING_BASE = new EnderfugeRecipes();
@@ -34,7 +33,25 @@ public class EnderfugeRecipes {
 	}
 
 	private EnderfugeRecipes() {
-
+		//Misc. Vanilla Stuff
+		addSmeltingRecipe(new ItemStack(Blocks.GOLD_ORE, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
+				12), 0.7F);
+		addSmeltingRecipe(new ItemStack(Blocks.IRON_ORE, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
+				12), 0.7F);
+		addSmeltingRecipe(new ItemStack(Blocks.DIAMOND_ORE, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.nuggetdiamond,
+				12), 0.7F);
+		addSmeltingRecipe(new ItemStack(Blocks.GRAVEL, 8,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.FLINT,
+				1), 0.7F);
+		addSmeltingRecipe(new ItemStack(Blocks.MAGMA, 8,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.BLAZE_POWDER,
+				1), 0.7F);
+		addSmeltingRecipe(new ItemStack(ModBlocks.enderfuge), new ItemStack(
+				ModBlocks.enderfuge_active), 0);
+		
 		// Gold stuff
 		addSmeltingRecipe(new ItemStack(Items.GOLDEN_AXE, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
@@ -63,8 +80,9 @@ public class EnderfugeRecipes {
 		addSmeltingRecipe(new ItemStack(Items.GOLDEN_BOOTS, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
 				22), 0.7F);
-		addSmeltingRecipe(new ItemStack(ModBlocks.enderfuge), new ItemStack(
-				ModBlocks.enderfuge_active), 0);
+		addSmeltingRecipe(new ItemStack(Items.GOLDEN_HORSE_ARMOR, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
+				15), 0.7F);
 
 		// Iron Stuff
 		addSmeltingRecipe(new ItemStack(Items.IRON_AXE, 1,
@@ -94,6 +112,9 @@ public class EnderfugeRecipes {
 		addSmeltingRecipe(new ItemStack(Items.IRON_BOOTS, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
 				22), 0.7F);
+		addSmeltingRecipe(new ItemStack(Items.IRON_HORSE_ARMOR, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
+				15), 0.7F);
 
 		// Chainmail stuff
 		addSmeltingRecipe(new ItemStack(Items.CHAINMAIL_HELMET, 1,
@@ -137,18 +158,9 @@ public class EnderfugeRecipes {
 		addSmeltingRecipe(new ItemStack(Items.DIAMOND_BOOTS, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(
 				ModItems.nuggetdiamond, 22), 0.7F);
-
-		// Horse Armors
 		addSmeltingRecipe(new ItemStack(Items.DIAMOND_HORSE_ARMOR, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(
 				ModItems.nuggetdiamond, 15), 0.7F);
-		addSmeltingRecipe(new ItemStack(Items.IRON_HORSE_ARMOR, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.IRON_NUGGET,
-				15), 0.7F);
-		addSmeltingRecipe(new ItemStack(Items.GOLDEN_HORSE_ARMOR, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(Items.GOLD_NUGGET,
-				15), 0.7F);
-
 	}
 
 	/**

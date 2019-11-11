@@ -71,8 +71,8 @@ public class IMCHandler {
 	static final String OUTPUT = "output";
 	static final String BURNTIME = "burn";
 	
-	public static final String ADD_ENDERFUGE_RECIPE = "addenderfugerecipe";
-	public static final String ADD_ENDERFUGE_FUEL = "addenderfugefuel";
-	public static final String REMOVE_ENDERFUGE_RECIPE = "removeenderfugerecipe";
-	public static final String REMOVE_ENDERFUGE_FUEL = "removeenderfugefuel";
+	public static final String ADD_ENDERFUGE_RECIPE = "setRecipeEnderfuge";
+	public static final String ADD_ENDERFUGE_FUEL = "setFuelEnderfuge";
+	public static final String REMOVE_ENDERFUGE_RECIPE = "unsetRecipeEnderfuge";
+	public static final String REMOVE_ENDERFUGE_FUEL = "unsetFuelEnderfuge";
 }

@@ -26,20 +26,20 @@ public class EnderfugeFuel {
 	private EnderfugeFuel() {
 		addEnderfugeFuel(new ItemStack(Items.ENDER_EYE), Config.eyeFuelTime);
 		addEnderfugeFuel(new ItemStack(Items.ENDER_PEARL), Config.pearlFuelTime);
-		addEnderfugeFuel(new ItemStack(Items.END_CRYSTAL),
-				Config.crystalFuelTime);
-		addEnderfugeFuel(new ItemStack(Items.SHULKER_SHELL),
-				Config.shulkerShellFuelTime);
-		addEnderfugeFuel(new ItemStack(Blocks.DRAGON_EGG),
-				Config.dragonEggFuelTime);
+		addEnderfugeFuel(new ItemStack(Items.END_CRYSTAL), Config.crystalFuelTime);
+		addEnderfugeFuel(new ItemStack(Items.SHULKER_SHELL), Config.shulkerShellFuelTime);
+		addEnderfugeFuel(new ItemStack(Blocks.DRAGON_EGG), Config.dragonEggFuelTime);
 		if (Config.creativeFuelItems)
-		{
-			addEnderfugeFuel(new ItemStack(Blocks.BEDROCK), Integer.MAX_VALUE);
-			addEnderfugeFuel(new ItemStack(Blocks.COMMAND_BLOCK), Integer.MAX_VALUE);
-			addEnderfugeFuel(new ItemStack(Blocks.REPEATING_COMMAND_BLOCK), Integer.MAX_VALUE);
-			addEnderfugeFuel(new ItemStack(Blocks.CHAIN_COMMAND_BLOCK), Integer.MAX_VALUE);
-			addEnderfugeFuel(new ItemStack(Items.COMMAND_BLOCK_MINECART), Integer.MAX_VALUE);
-		}
+			loadCreativeItems();
+	}
+	
+	private void loadCreativeItems()
+	{
+		addEnderfugeFuel(new ItemStack(Blocks.BEDROCK), 9999999);
+		addEnderfugeFuel(new ItemStack(Blocks.COMMAND_BLOCK), 9999999);
+		addEnderfugeFuel(new ItemStack(Blocks.REPEATING_COMMAND_BLOCK), 9999999);
+		addEnderfugeFuel(new ItemStack(Blocks.CHAIN_COMMAND_BLOCK), 9999999);
+		addEnderfugeFuel(new ItemStack(Items.COMMAND_BLOCK_MINECART), 9999999);
 	}
 
 	public void addEnderfugeFuel(ItemStack input, int burntime) {

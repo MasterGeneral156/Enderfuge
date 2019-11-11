@@ -45,7 +45,7 @@ public class BlockEnderfuge extends BlockContainer implements
 		ITileEntityProvider, BlockRenderRegister, ItemModelProvider {
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	private final boolean isBurning;
-	private static boolean keepInventory;
+	private static boolean keepInventory = Config.keepInventory;
 	protected String name;
 
 	public BlockEnderfuge(String unlocalizedName, Boolean isBurning) {
@@ -258,16 +258,10 @@ public class BlockEnderfuge extends BlockContainer implements
 
 	@Override
 	public void reg(Block block) {
-		Minecraft
-				.getMinecraft()
-				.getRenderItem()
-				.getItemModelMesher()
-				.register(
-						Item.getItemFromBlock(block),
-						0,
-						new ModelResourceLocation(Enderfuge.MODID + ":"
-								+ block.getUnlocalizedName().substring(5),
-								"inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(
+						Item.getItemFromBlock(block), 0, 
+						new ModelResourceLocation(Enderfuge.MODID + ":"+ block.getUnlocalizedName().substring(5),"inventory")
+						);
 
 	}
 

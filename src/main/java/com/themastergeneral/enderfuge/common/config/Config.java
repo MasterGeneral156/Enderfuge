@@ -16,6 +16,7 @@ public class Config {
 	public static int crystalFuelTime = 25000;
 	public static int dragonEggFuelTime = 50000;
 	public static int shulkerShellFuelTime = 800;
+	public static boolean keepInventory = false;
 
 	private static final String CATEGORY_INTEGRATION = "Integration";
 	public static boolean ic2compat = true;
@@ -61,6 +62,8 @@ public class Config {
 		shulkerShellFuelTime = cfg.getInt("Shulker Shell Fuel Length",
 				CATEGORY_GENERAL, shulkerShellFuelTime, 1, 65655,
 				"How many ticks a Shulker Shell will fuel the Enderfuge.");
+		keepInventory = cfg.getBoolean("Enderfuge item purge.", CATEGORY_GENERAL,
+				keepInventory, "Enable the Enderfuge deleting the items inside of it when its broke.");
 
 		// Misc Options
 		cfg.addCustomCategoryComment(CATEGORY_MISC, "Miscellaneous");

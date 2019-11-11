@@ -287,11 +287,10 @@ public class TEEnderfuge extends TileEntity implements ITickable,
 	 * furnace burning, or 0 if the item isn't fuel
 	 */
 	public static int getItemBurnTime(ItemStack stack) {
-		if (stack.isEmpty()) {
+		if (stack.isEmpty())
 			return 0;
-		} else {
+		else
 			return EnderfugeFuel.instance().getFuelResult(stack);
-		}
 	}
 
 	public static boolean isItemFuel(ItemStack stack) {

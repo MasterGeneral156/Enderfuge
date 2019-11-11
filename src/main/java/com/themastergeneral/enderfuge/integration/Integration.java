@@ -2,7 +2,9 @@ package com.themastergeneral.enderfuge.integration;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.oredict.OreDictionary;
 
+import com.themastergeneral.ctdcore.helpers.StackHelper;
 import com.themastergeneral.enderfuge.Enderfuge;
 import com.themastergeneral.enderfuge.common.config.Config;
 import com.themastergeneral.enderfuge.common.processing.EnderfugeFuel;
@@ -23,6 +25,15 @@ public class Integration {
 
 	public static void addEnderfugeFuel(ItemStack input, int burntime) {
 		EnderfugeFuel.instance().addEnderfugeFuel(input, burntime);
+	}
+	
+	public static void addRecipeByName(String name, String output, int qty, int meta, float xp)
+	{
+		addSmeltingRecipe(new ItemStack(StackHelper
+						.itemFromRegistryName(name), 1,
+						OreDictionary.WILDCARD_VALUE), new ItemStack(
+						StackHelper.itemFromRegistryName(output), qty,
+						meta), xp);
 	}
 
 	public static void loadIC2() {

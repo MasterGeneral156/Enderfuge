@@ -23,7 +23,7 @@ import com.themastergeneral.enderfuge.utils.IMCHandler;
 public class Enderfuge {
 	public static final String MODID = "enderfuge";
 	public static final String MODNAME = "Enderfuge";
-	public static final String VERSION = "1.6.0";
+	public static final String VERSION = "1.6.1";
 	public static final String acceptedMinecraftVersions = "1.12.2";
 	public static final String DEPENDENCIES = "required-after:ctdcore@[1.4.2,];after:ic2;after:thermalfoundation;after:crafttweaker;";
 	public static final String updateJSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/Enderfuge.json";

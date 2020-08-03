@@ -32,6 +32,12 @@ public class Enderfuge
 	}
 	
 	@ZenMethod
+    public static void clearAllRecipes() 
+	{
+		EnderfugeRecipes.instance().getSmeltingList().clear();
+	}
+	
+	@ZenMethod
     public static void addFuel(IItemStack input, int ticks) 
 	{
 		EnderfugeFuel.instance().addEnderfugeFuel(CraftTweakerMC.getItemStack(input), ticks);
@@ -41,6 +47,12 @@ public class Enderfuge
     public static void removeFuel(IItemStack input) 
 	{
 		EnderfugeFuel.instance().removeFuel(CraftTweakerMC.getItemStack(input));
+	}
+	
+	@ZenMethod
+    public static void clearAllFuel() 
+	{
+		EnderfugeFuel.instance().getSmeltingList().clear();
 	}
 	
 }

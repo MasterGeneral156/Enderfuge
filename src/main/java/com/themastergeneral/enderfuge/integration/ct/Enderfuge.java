@@ -11,6 +11,10 @@ import crafttweaker.api.minecraft.CraftTweakerMC;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 
+//Hey More Tweakers! Didn't realize you guys
+//already had CT with us! Didn't mean to intrude
+//much love guys < 3 -TMG
+
 @ZenClass("mods.enderfuge")
 @ZenRegister
 public class Enderfuge 

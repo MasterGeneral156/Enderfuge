@@ -26,6 +26,7 @@ public class Config {
 	
 	//Client
 	public static boolean stfu = false;
+	public static float enderfugeVol = 1.0F;
 
 	
 	private static final String CATEGORY_GENERAL = "Balance";
@@ -104,5 +105,6 @@ public class Config {
 								CATEGORY_CLIENT,
 								stfu,
 								"Enable if you want the Enderfuge to STFU.");
+				enderfugeVol = cfg.getFloat("Enderfuge Volume", CATEGORY_CLIENT, enderfugeVol, 0.1F, 1.0F, "How loud do you want the Enderfuge?");
 	}
 }

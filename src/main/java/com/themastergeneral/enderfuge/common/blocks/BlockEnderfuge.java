@@ -150,7 +150,7 @@ public class BlockEnderfuge extends BlockContainer implements
 					worldIn.playSound((double) pos.getX() + 0.5D,
 							(double) pos.getY(), (double) pos.getZ() + 0.5D,
 							SoundEvents.BLOCK_PORTAL_AMBIENT, SoundCategory.BLOCKS,
-							1.0F, 1.0F, false);
+							Config.enderfugeVol, 1.0F, false);
 				}
 			}
 

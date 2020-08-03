@@ -9,7 +9,7 @@ import com.themastergeneral.enderfuge.proxy.CommonProxy;
 
 public class Config {
 
-	private static final String CATEGORY_GENERAL = "Balance";
+	//Common
 	public static int smeltTime = 400;
 	public static int pearlFuelTime = 1600;
 	public static int eyeFuelTime = 5600;
@@ -17,14 +17,21 @@ public class Config {
 	public static int dragonEggFuelTime = 50000;
 	public static int shulkerShellFuelTime = 800;
 	public static boolean keepInventory = false;
-
-	private static final String CATEGORY_INTEGRATION = "Integration";
+	
+	//Integration
 	public static boolean ic2compat = true;
 	public static boolean tfcompat = true;
 	public static boolean eu2compat = true;
 	public static boolean pslcompat = true;
+	
+	//Client
+	public static boolean stfu = false;
 
+	
+	private static final String CATEGORY_GENERAL = "Balance";
+	private static final String CATEGORY_INTEGRATION = "Integration";
 	private static final String CATEGORY_MISC = "Miscellaneous";
+	private static final String CATEGORY_CLIENT = "Client";
 	public static boolean creativeFuelItems = true;
 
 	public static void readConfig() {
@@ -88,5 +95,14 @@ public class Config {
 		pslcompat = cfg.getBoolean("Pumpkin Spice Latte Integration",
 				CATEGORY_INTEGRATION, pslcompat,
 				"Enable integration with Pumpkin Spice Latte?");
+		
+		// Misc Options
+				cfg.addCustomCategoryComment(CATEGORY_CLIENT, "Client side only");
+				stfu = cfg
+						.getBoolean(
+								"Enderfuge STFU",
+								CATEGORY_CLIENT,
+								stfu,
+								"Enable if you want the Enderfuge to STFU.");
 	}
 }

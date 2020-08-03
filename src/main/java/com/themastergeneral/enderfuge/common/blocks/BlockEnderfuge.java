@@ -142,12 +142,16 @@ public class BlockEnderfuge extends BlockContainer implements
 			double d2 = (double) pos.getZ() + 0.5D;
 			double d3 = 0.52D;
 			double d4 = rand.nextDouble() * 0.6D - 0.3D;
-
-			if (rand.nextDouble() < 0.1D) {
-				worldIn.playSound((double) pos.getX() + 0.5D,
-						(double) pos.getY(), (double) pos.getZ() + 0.5D,
-						SoundEvents.BLOCK_PORTAL_AMBIENT, SoundCategory.BLOCKS,
-						1.0F, 1.0F, false);
+			
+			if (!Config.stfu)
+			{
+				if (rand.nextDouble() < 0.1D) 
+				{
+					worldIn.playSound((double) pos.getX() + 0.5D,
+							(double) pos.getY(), (double) pos.getZ() + 0.5D,
+							SoundEvents.BLOCK_PORTAL_AMBIENT, SoundCategory.BLOCKS,
+							1.0F, 1.0F, false);
+				}
 			}
 
 			switch (enumfacing) {

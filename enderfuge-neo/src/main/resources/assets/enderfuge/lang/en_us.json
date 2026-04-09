@@ -1,0 +1,13 @@
+{
+  "itemGroup.enderfuge": "Example Mod Tab",
+  "block.enderfuge.example_block": "Example Block",
+  "item.enderfuge.example_item": "Example Item",
+
+  "enderfuge.configuration.title": "Enderfuge Configs",
+  "enderfuge.configuration.section.enderfuge.common.toml": "Enderfuge Configs",
+  "enderfuge.configuration.section.enderfuge.common.toml.title": "Enderfuge Configs",
+  "enderfuge.configuration.items": "Item List",
+  "enderfuge.configuration.logDirtBlock": "Log Dirt Block",
+  "enderfuge.configuration.magicNumberIntroduction": "Magic Number Text",
+  "enderfuge.configuration.magicNumber": "Magic Number"
+}
